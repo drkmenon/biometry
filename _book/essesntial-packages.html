@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Chapter 6 Essesntial packages | A Minimal Book Example</title>
+
+    <meta name="author" content="John Doe" />
+  
+   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::bs4_book,
+set in the _output.yml file.</p>" />
+   <meta name="generator" content="placeholder" />
+  <meta property="og:title" content="Chapter 6 Essesntial packages | A Minimal Book Example" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::bs4_book,
+set in the _output.yml file.</p>" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Essesntial packages | A Minimal Book Example" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::bs4_book,
+set in the _output.yml file.</p>" />
+  
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script>
+    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
+    <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
+    <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script>
+    <script src="libs/bs3compat-0.3.1/transition.js"></script>
+    <script src="libs/bs3compat-0.3.1/tabs.js"></script>
+    <script src="libs/bs3compat-0.3.1/bs3compat.js"></script>
+    <link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet" />
+    <script src="libs/bs4_book-1.0.0/bs4_book.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script>
+
+  <!-- CSS -->
+    <link rel="stylesheet" href="bs4_style.css" />
+  
+</head>
+
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book">
+    <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">A Minimal Book Example</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+      </form>
+
+      <nav aria-label="Table of contents">
+        <h2>Table of contents</h2>
+        <div id="book-toc"></div>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="#">View book source <i class="fab fa-github"></i></a></li></p>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="col-sm-12 col-md-9 col-lg-7" id="content">
+<div id="essesntial-packages" class="section level1" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Essesntial packages</h1>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="essesntial-packages.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb5-2"><a href="essesntial-packages.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb5-3"><a href="essesntial-packages.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.1 ──</span></span>
+<span id="cb5-4"><a href="essesntial-packages.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✓ ggplot2 3.3.5     ✓ purrr   0.3.4</span></span>
+<span id="cb5-5"><a href="essesntial-packages.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✓ tibble  3.1.5     ✓ dplyr   1.0.7</span></span>
+<span id="cb5-6"><a href="essesntial-packages.html#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✓ tidyr   1.1.4     ✓ stringr 1.4.0</span></span>
+<span id="cb5-7"><a href="essesntial-packages.html#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✓ readr   2.0.2     ✓ forcats 0.5.1</span></span>
+<span id="cb5-8"><a href="essesntial-packages.html#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
+<span id="cb5-9"><a href="essesntial-packages.html#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x dplyr::filter() masks stats::filter()</span></span>
+<span id="cb5-10"><a href="essesntial-packages.html#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x dplyr::lag()    masks stats::lag()</span></span>
+<span id="cb5-11"><a href="essesntial-packages.html#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(epiR)</span>
+<span id="cb5-12"><a href="essesntial-packages.html#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: survival</span></span>
+<span id="cb5-13"><a href="essesntial-packages.html#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Package epiR 2.0.39 is loaded</span></span>
+<span id="cb5-14"><a href="essesntial-packages.html#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Type help(epi.about) for summary information</span></span>
+<span id="cb5-15"><a href="essesntial-packages.html#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Type browseVignettes(package = &#39;epiR&#39;) to learn how to use epiR for applied epidemiological analyses</span></span>
+<span id="cb5-16"><a href="essesntial-packages.html#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb5-17"><a href="essesntial-packages.html#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(epiDisplay)</span>
+<span id="cb5-18"><a href="essesntial-packages.html#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: foreign</span></span>
+<span id="cb5-19"><a href="essesntial-packages.html#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: MASS</span></span>
+<span id="cb5-20"><a href="essesntial-packages.html#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb5-21"><a href="essesntial-packages.html#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Attaching package: &#39;MASS&#39;</span></span>
+<span id="cb5-22"><a href="essesntial-packages.html#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; The following object is masked from &#39;package:dplyr&#39;:</span></span>
+<span id="cb5-23"><a href="essesntial-packages.html#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb5-24"><a href="essesntial-packages.html#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     select</span></span>
+<span id="cb5-25"><a href="essesntial-packages.html#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: nnet</span></span>
+<span id="cb5-26"><a href="essesntial-packages.html#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb5-27"><a href="essesntial-packages.html#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Attaching package: &#39;epiDisplay&#39;</span></span>
+<span id="cb5-28"><a href="essesntial-packages.html#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; The following object is masked from &#39;package:ggplot2&#39;:</span></span>
+<span id="cb5-29"><a href="essesntial-packages.html#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb5-30"><a href="essesntial-packages.html#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     alpha</span></span>
+<span id="cb5-31"><a href="essesntial-packages.html#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(survival)</span>
+<span id="cb5-32"><a href="essesntial-packages.html#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(survminer)</span>
+<span id="cb5-33"><a href="essesntial-packages.html#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: ggpubr</span></span>
+<span id="cb5-34"><a href="essesntial-packages.html#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(randomizeR)</span>
+<span id="cb5-35"><a href="essesntial-packages.html#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: plotrix</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="essesntial-packages.html#cb6-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb6-2"><a href="essesntial-packages.html#cb6-2" aria-hidden="true" tabindex="-1"></a>x</span>
+<span id="cb6-3"><a href="essesntial-packages.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 2</span></span>
+<span id="cb6-4"><a href="essesntial-packages.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># x is an object containing variable 2</span></span>
+<span id="cb6-5"><a href="essesntial-packages.html#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="essesntial-packages.html#cb6-6" aria-hidden="true" tabindex="-1"></a>y<span class="ot">&lt;-</span><span class="st">&quot;male&quot;</span></span>
+<span id="cb6-7"><a href="essesntial-packages.html#cb6-7" aria-hidden="true" tabindex="-1"></a>y</span>
+<span id="cb6-8"><a href="essesntial-packages.html#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;male&quot;</span></span>
+<span id="cb6-9"><a href="essesntial-packages.html#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="essesntial-packages.html#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># y is an object containing variable &quot;male&quot;</span></span>
+<span id="cb6-11"><a href="essesntial-packages.html#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># x is numeric/integer and &quot;male&quot; is factor/character</span></span>
+<span id="cb6-12"><a href="essesntial-packages.html#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># factors can be grouped for analysis, characters cannot be</span></span>
+<span id="cb6-13"><a href="essesntial-packages.html#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="essesntial-packages.html#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x)</span>
+<span id="cb6-15"><a href="essesntial-packages.html#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;numeric&quot;</span></span>
+<span id="cb6-16"><a href="essesntial-packages.html#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(y)</span>
+<span id="cb6-17"><a href="essesntial-packages.html#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;character&quot;</span></span>
+<span id="cb6-18"><a href="essesntial-packages.html#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="essesntial-packages.html#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="essesntial-packages.html#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="essesntial-packages.html#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert character to factor</span></span>
+<span id="cb6-22"><a href="essesntial-packages.html#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-23"><a href="essesntial-packages.html#cb6-23" aria-hidden="true" tabindex="-1"></a>z<span class="ot">=</span> <span class="fu">as.factor</span>(y)</span>
+<span id="cb6-24"><a href="essesntial-packages.html#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(z)</span>
+<span id="cb6-25"><a href="essesntial-packages.html#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;factor&quot;</span></span>
+<span id="cb6-26"><a href="essesntial-packages.html#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="co">#concatenation: it is a string of interconnected things</span></span>
+<span id="cb6-27"><a href="essesntial-packages.html#cb6-27" aria-hidden="true" tabindex="-1"></a>x1<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb6-28"><a href="essesntial-packages.html#cb6-28" aria-hidden="true" tabindex="-1"></a>x1</span>
+<span id="cb6-29"><a href="essesntial-packages.html#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 2 3 4 5</span></span>
+<span id="cb6-30"><a href="essesntial-packages.html#cb6-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-31"><a href="essesntial-packages.html#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="co"># different methods of producing concatenated vectors</span></span>
+<span id="cb6-32"><a href="essesntial-packages.html#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-33"><a href="essesntial-packages.html#cb6-33" aria-hidden="true" tabindex="-1"></a>x1<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
+<span id="cb6-34"><a href="essesntial-packages.html#cb6-34" aria-hidden="true" tabindex="-1"></a>x1<span class="ot">&lt;-</span><span class="fu">seq</span>(<span class="at">from=</span><span class="dv">1</span>, <span class="at">to=</span><span class="dv">5</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb6-35"><a href="essesntial-packages.html#cb6-35" aria-hidden="true" tabindex="-1"></a>x1</span>
+<span id="cb6-36"><a href="essesntial-packages.html#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 2 3 4 5</span></span>
+<span id="cb6-37"><a href="essesntial-packages.html#cb6-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-38"><a href="essesntial-packages.html#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="co"># we can also create repeated sequence in R</span></span>
+<span id="cb6-39"><a href="essesntial-packages.html#cb6-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-40"><a href="essesntial-packages.html#cb6-40" aria-hidden="true" tabindex="-1"></a>x2<span class="ot">&lt;-</span><span class="fu">rep</span>(<span class="dv">1</span>, <span class="at">times=</span><span class="dv">5</span>)</span>
+<span id="cb6-41"><a href="essesntial-packages.html#cb6-41" aria-hidden="true" tabindex="-1"></a>x2</span>
+<span id="cb6-42"><a href="essesntial-packages.html#cb6-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 1 1 1 1</span></span>
+<span id="cb6-43"><a href="essesntial-packages.html#cb6-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-44"><a href="essesntial-packages.html#cb6-44" aria-hidden="true" tabindex="-1"></a>x3<span class="ot">&lt;-</span><span class="fu">rep</span>(<span class="fu">seq</span>(<span class="at">from=</span><span class="dv">2</span>, <span class="at">to=</span><span class="dv">6</span>, <span class="at">by=</span><span class="fl">0.05</span>), <span class="at">times=</span><span class="dv">5</span>)</span>
+<span id="cb6-45"><a href="essesntial-packages.html#cb6-45" aria-hidden="true" tabindex="-1"></a>x3</span>
+<span id="cb6-46"><a href="essesntial-packages.html#cb6-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   [1] 2.00 2.05 2.10 2.15 2.20 2.25 2.30 2.35 2.40 2.45 2.50</span></span>
+<span id="cb6-47"><a href="essesntial-packages.html#cb6-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [12] 2.55 2.60 2.65 2.70 2.75 2.80 2.85 2.90 2.95 3.00 3.05</span></span>
+<span id="cb6-48"><a href="essesntial-packages.html#cb6-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [23] 3.10 3.15 3.20 3.25 3.30 3.35 3.40 3.45 3.50 3.55 3.60</span></span>
+<span id="cb6-49"><a href="essesntial-packages.html#cb6-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [34] 3.65 3.70 3.75 3.80 3.85 3.90 3.95 4.00 4.05 4.10 4.15</span></span>
+<span id="cb6-50"><a href="essesntial-packages.html#cb6-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [45] 4.20 4.25 4.30 4.35 4.40 4.45 4.50 4.55 4.60 4.65 4.70</span></span>
+<span id="cb6-51"><a href="essesntial-packages.html#cb6-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [56] 4.75 4.80 4.85 4.90 4.95 5.00 5.05 5.10 5.15 5.20 5.25</span></span>
+<span id="cb6-52"><a href="essesntial-packages.html#cb6-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [67] 5.30 5.35 5.40 5.45 5.50 5.55 5.60 5.65 5.70 5.75 5.80</span></span>
+<span id="cb6-53"><a href="essesntial-packages.html#cb6-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [78] 5.85 5.90 5.95 6.00 2.00 2.05 2.10 2.15 2.20 2.25 2.30</span></span>
+<span id="cb6-54"><a href="essesntial-packages.html#cb6-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [89] 2.35 2.40 2.45 2.50 2.55 2.60 2.65 2.70 2.75 2.80 2.85</span></span>
+<span id="cb6-55"><a href="essesntial-packages.html#cb6-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [100] 2.90 2.95 3.00 3.05 3.10 3.15 3.20 3.25 3.30 3.35 3.40</span></span>
+<span id="cb6-56"><a href="essesntial-packages.html#cb6-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [111] 3.45 3.50 3.55 3.60 3.65 3.70 3.75 3.80 3.85 3.90 3.95</span></span>
+<span id="cb6-57"><a href="essesntial-packages.html#cb6-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [122] 4.00 4.05 4.10 4.15 4.20 4.25 4.30 4.35 4.40 4.45 4.50</span></span>
+<span id="cb6-58"><a href="essesntial-packages.html#cb6-58" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [133] 4.55 4.60 4.65 4.70 4.75 4.80 4.85 4.90 4.95 5.00 5.05</span></span>
+<span id="cb6-59"><a href="essesntial-packages.html#cb6-59" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [144] 5.10 5.15 5.20 5.25 5.30 5.35 5.40 5.45 5.50 5.55 5.60</span></span>
+<span id="cb6-60"><a href="essesntial-packages.html#cb6-60" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [155] 5.65 5.70 5.75 5.80 5.85 5.90 5.95 6.00 2.00 2.05 2.10</span></span>
+<span id="cb6-61"><a href="essesntial-packages.html#cb6-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [166] 2.15 2.20 2.25 2.30 2.35 2.40 2.45 2.50 2.55 2.60 2.65</span></span>
+<span id="cb6-62"><a href="essesntial-packages.html#cb6-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [177] 2.70 2.75 2.80 2.85 2.90 2.95 3.00 3.05 3.10 3.15 3.20</span></span>
+<span id="cb6-63"><a href="essesntial-packages.html#cb6-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [188] 3.25 3.30 3.35 3.40 3.45 3.50 3.55 3.60 3.65 3.70 3.75</span></span>
+<span id="cb6-64"><a href="essesntial-packages.html#cb6-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [199] 3.80 3.85 3.90 3.95 4.00 4.05 4.10 4.15 4.20 4.25 4.30</span></span>
+<span id="cb6-65"><a href="essesntial-packages.html#cb6-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [210] 4.35 4.40 4.45 4.50 4.55 4.60 4.65 4.70 4.75 4.80 4.85</span></span>
+<span id="cb6-66"><a href="essesntial-packages.html#cb6-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [221] 4.90 4.95 5.00 5.05 5.10 5.15 5.20 5.25 5.30 5.35 5.40</span></span>
+<span id="cb6-67"><a href="essesntial-packages.html#cb6-67" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [232] 5.45 5.50 5.55 5.60 5.65 5.70 5.75 5.80 5.85 5.90 5.95</span></span>
+<span id="cb6-68"><a href="essesntial-packages.html#cb6-68" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [243] 6.00 2.00 2.05 2.10 2.15 2.20 2.25 2.30 2.35 2.40 2.45</span></span>
+<span id="cb6-69"><a href="essesntial-packages.html#cb6-69" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [254] 2.50 2.55 2.60 2.65 2.70 2.75 2.80 2.85 2.90 2.95 3.00</span></span>
+<span id="cb6-70"><a href="essesntial-packages.html#cb6-70" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [265] 3.05 3.10 3.15 3.20 3.25 3.30 3.35 3.40 3.45 3.50 3.55</span></span>
+<span id="cb6-71"><a href="essesntial-packages.html#cb6-71" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [276] 3.60 3.65 3.70 3.75 3.80 3.85 3.90 3.95 4.00 4.05 4.10</span></span>
+<span id="cb6-72"><a href="essesntial-packages.html#cb6-72" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [287] 4.15 4.20 4.25 4.30 4.35 4.40 4.45 4.50 4.55 4.60 4.65</span></span>
+<span id="cb6-73"><a href="essesntial-packages.html#cb6-73" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [298] 4.70 4.75 4.80 4.85 4.90 4.95 5.00 5.05 5.10 5.15 5.20</span></span>
+<span id="cb6-74"><a href="essesntial-packages.html#cb6-74" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [309] 5.25 5.30 5.35 5.40 5.45 5.50 5.55 5.60 5.65 5.70 5.75</span></span>
+<span id="cb6-75"><a href="essesntial-packages.html#cb6-75" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [320] 5.80 5.85 5.90 5.95 6.00 2.00 2.05 2.10 2.15 2.20 2.25</span></span>
+<span id="cb6-76"><a href="essesntial-packages.html#cb6-76" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [331] 2.30 2.35 2.40 2.45 2.50 2.55 2.60 2.65 2.70 2.75 2.80</span></span>
+<span id="cb6-77"><a href="essesntial-packages.html#cb6-77" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [342] 2.85 2.90 2.95 3.00 3.05 3.10 3.15 3.20 3.25 3.30 3.35</span></span>
+<span id="cb6-78"><a href="essesntial-packages.html#cb6-78" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [353] 3.40 3.45 3.50 3.55 3.60 3.65 3.70 3.75 3.80 3.85 3.90</span></span>
+<span id="cb6-79"><a href="essesntial-packages.html#cb6-79" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [364] 3.95 4.00 4.05 4.10 4.15 4.20 4.25 4.30 4.35 4.40 4.45</span></span>
+<span id="cb6-80"><a href="essesntial-packages.html#cb6-80" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [375] 4.50 4.55 4.60 4.65 4.70 4.75 4.80 4.85 4.90 4.95 5.00</span></span>
+<span id="cb6-81"><a href="essesntial-packages.html#cb6-81" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [386] 5.05 5.10 5.15 5.20 5.25 5.30 5.35 5.40 5.45 5.50 5.55</span></span>
+<span id="cb6-82"><a href="essesntial-packages.html#cb6-82" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [397] 5.60 5.65 5.70 5.75 5.80 5.85 5.90 5.95 6.00</span></span>
+<span id="cb6-83"><a href="essesntial-packages.html#cb6-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-84"><a href="essesntial-packages.html#cb6-84" aria-hidden="true" tabindex="-1"></a><span class="co"># extracting elements from concatenated string</span></span>
+<span id="cb6-85"><a href="essesntial-packages.html#cb6-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-86"><a href="essesntial-packages.html#cb6-86" aria-hidden="true" tabindex="-1"></a>x1</span>
+<span id="cb6-87"><a href="essesntial-packages.html#cb6-87" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 2 3 4 5</span></span>
+<span id="cb6-88"><a href="essesntial-packages.html#cb6-88" aria-hidden="true" tabindex="-1"></a>x1[<span class="dv">3</span>]</span>
+<span id="cb6-89"><a href="essesntial-packages.html#cb6-89" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 3</span></span>
+<span id="cb6-90"><a href="essesntial-packages.html#cb6-90" aria-hidden="true" tabindex="-1"></a>x1[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span>
+<span id="cb6-91"><a href="essesntial-packages.html#cb6-91" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 2 3</span></span>
+<span id="cb6-92"><a href="essesntial-packages.html#cb6-92" aria-hidden="true" tabindex="-1"></a>x1[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>)]</span>
+<span id="cb6-93"><a href="essesntial-packages.html#cb6-93" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 2 4</span></span>
+<span id="cb6-94"><a href="essesntial-packages.html#cb6-94" aria-hidden="true" tabindex="-1"></a>x1[<span class="sc">-</span><span class="dv">1</span>]</span>
+<span id="cb6-95"><a href="essesntial-packages.html#cb6-95" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 2 3 4 5</span></span>
+<span id="cb6-96"><a href="essesntial-packages.html#cb6-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-97"><a href="essesntial-packages.html#cb6-97" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrix of elements</span></span>
+<span id="cb6-98"><a href="essesntial-packages.html#cb6-98" aria-hidden="true" tabindex="-1"></a><span class="co"># Vector is a list of numbers/characters</span></span>
+<span id="cb6-99"><a href="essesntial-packages.html#cb6-99" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrix is an array of numbers/characters in raws and columns</span></span>
+<span id="cb6-100"><a href="essesntial-packages.html#cb6-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-101"><a href="essesntial-packages.html#cb6-101" aria-hidden="true" tabindex="-1"></a>m1<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>),<span class="at">nrow=</span><span class="dv">5</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb6-102"><a href="essesntial-packages.html#cb6-102" aria-hidden="true" tabindex="-1"></a>m1</span>
+<span id="cb6-103"><a href="essesntial-packages.html#cb6-103" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      [,1] [,2] [,3] [,4]</span></span>
+<span id="cb6-104"><a href="essesntial-packages.html#cb6-104" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1,]    1    2    3    4</span></span>
+<span id="cb6-105"><a href="essesntial-packages.html#cb6-105" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [2,]    5    6    7    8</span></span>
+<span id="cb6-106"><a href="essesntial-packages.html#cb6-106" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [3,]    9   10   11   12</span></span>
+<span id="cb6-107"><a href="essesntial-packages.html#cb6-107" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [4,]   13   14   15   16</span></span>
+<span id="cb6-108"><a href="essesntial-packages.html#cb6-108" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [5,]   17   18   19   20</span></span>
+<span id="cb6-109"><a href="essesntial-packages.html#cb6-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-110"><a href="essesntial-packages.html#cb6-110" aria-hidden="true" tabindex="-1"></a><span class="co"># similar to vectors, matrix can be subsetted</span></span>
+<span id="cb6-111"><a href="essesntial-packages.html#cb6-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-112"><a href="essesntial-packages.html#cb6-112" aria-hidden="true" tabindex="-1"></a>m1[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>), <span class="dv">2</span>]</span>
+<span id="cb6-113"><a href="essesntial-packages.html#cb6-113" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1]  6 10</span></span>
+<span id="cb6-114"><a href="essesntial-packages.html#cb6-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-115"><a href="essesntial-packages.html#cb6-115" aria-hidden="true" tabindex="-1"></a><span class="co"># data_frame is a type of matrix</span></span>
+<span id="cb6-116"><a href="essesntial-packages.html#cb6-116" aria-hidden="true" tabindex="-1"></a><span class="co"># we can create data_frame in R or we can import</span></span>
+<span id="cb6-117"><a href="essesntial-packages.html#cb6-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-118"><a href="essesntial-packages.html#cb6-118" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating data_frame</span></span>
+<span id="cb6-119"><a href="essesntial-packages.html#cb6-119" aria-hidden="true" tabindex="-1"></a><span class="co"># first we have to create concatenated strings of variable</span></span>
+<span id="cb6-120"><a href="essesntial-packages.html#cb6-120" aria-hidden="true" tabindex="-1"></a>name<span class="ot">&lt;-</span><span class="fu">c</span>(letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>])</span>
+<span id="cb6-121"><a href="essesntial-packages.html#cb6-121" aria-hidden="true" tabindex="-1"></a>age<span class="ot">&lt;-</span><span class="fu">seq</span>(<span class="at">from=</span><span class="dv">63</span>, <span class="at">to=</span><span class="dv">82</span>, <span class="at">by=</span><span class="dv">2</span>)</span>
+<span id="cb6-122"><a href="essesntial-packages.html#cb6-122" aria-hidden="true" tabindex="-1"></a>type_surg<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb6-123"><a href="essesntial-packages.html#cb6-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-124"><a href="essesntial-packages.html#cb6-124" aria-hidden="true" tabindex="-1"></a><span class="co"># R recognizes this as a number series, we have to covert this to factor</span></span>
+<span id="cb6-125"><a href="essesntial-packages.html#cb6-125" aria-hidden="true" tabindex="-1"></a>type_surg<span class="ot">&lt;-</span><span class="fu">as.factor</span>(type_surg)</span>
+<span id="cb6-126"><a href="essesntial-packages.html#cb6-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-127"><a href="essesntial-packages.html#cb6-127" aria-hidden="true" tabindex="-1"></a>pri_event<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb6-128"><a href="essesntial-packages.html#cb6-128" aria-hidden="true" tabindex="-1"></a>pri_event<span class="ot">&lt;-</span><span class="fu">as.factor</span>(pri_event)</span>
+<span id="cb6-129"><a href="essesntial-packages.html#cb6-129" aria-hidden="true" tabindex="-1"></a>time<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">24</span>,<span class="dv">24</span>,<span class="dv">24</span>,<span class="dv">24</span>,<span class="dv">24</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">24</span>,<span class="dv">24</span>,<span class="dv">7</span>)</span>
+<span id="cb6-130"><a href="essesntial-packages.html#cb6-130" aria-hidden="true" tabindex="-1"></a>test_data<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(name,age,type_surg,pri_event,time)</span>
+<span id="cb6-131"><a href="essesntial-packages.html#cb6-131" aria-hidden="true" tabindex="-1"></a>test_data</span>
+<span id="cb6-132"><a href="essesntial-packages.html#cb6-132" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    name age type_surg pri_event time</span></span>
+<span id="cb6-133"><a href="essesntial-packages.html#cb6-133" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1     a  63         0         0   24</span></span>
+<span id="cb6-134"><a href="essesntial-packages.html#cb6-134" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2     b  65         1         0   24</span></span>
+<span id="cb6-135"><a href="essesntial-packages.html#cb6-135" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3     c  67         0         0   24</span></span>
+<span id="cb6-136"><a href="essesntial-packages.html#cb6-136" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4     d  69         0         0   24</span></span>
+<span id="cb6-137"><a href="essesntial-packages.html#cb6-137" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5     e  71         1         0   24</span></span>
+<span id="cb6-138"><a href="essesntial-packages.html#cb6-138" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6     f  73         1         1    3</span></span>
+<span id="cb6-139"><a href="essesntial-packages.html#cb6-139" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7     g  75         1         1    2</span></span>
+<span id="cb6-140"><a href="essesntial-packages.html#cb6-140" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8     h  77         0         0   24</span></span>
+<span id="cb6-141"><a href="essesntial-packages.html#cb6-141" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9     i  79         0         0   24</span></span>
+<span id="cb6-142"><a href="essesntial-packages.html#cb6-142" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10    j  81         0         1    7</span></span>
+<span id="cb6-143"><a href="essesntial-packages.html#cb6-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-144"><a href="essesntial-packages.html#cb6-144" aria-hidden="true" tabindex="-1"></a><span class="co"># subsetting can be done. important to remember to specify the column as blank after a coma</span></span>
+<span id="cb6-145"><a href="essesntial-packages.html#cb6-145" aria-hidden="true" tabindex="-1"></a>ageo70<span class="ot">&lt;-</span>test_data[age<span class="sc">&gt;</span><span class="dv">70</span>,]</span>
+<span id="cb6-146"><a href="essesntial-packages.html#cb6-146" aria-hidden="true" tabindex="-1"></a>ageo70</span>
+<span id="cb6-147"><a href="essesntial-packages.html#cb6-147" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    name age type_surg pri_event time</span></span>
+<span id="cb6-148"><a href="essesntial-packages.html#cb6-148" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5     e  71         1         0   24</span></span>
+<span id="cb6-149"><a href="essesntial-packages.html#cb6-149" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6     f  73         1         1    3</span></span>
+<span id="cb6-150"><a href="essesntial-packages.html#cb6-150" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7     g  75         1         1    2</span></span>
+<span id="cb6-151"><a href="essesntial-packages.html#cb6-151" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8     h  77         0         0   24</span></span>
+<span id="cb6-152"><a href="essesntial-packages.html#cb6-152" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9     i  79         0         0   24</span></span>
+<span id="cb6-153"><a href="essesntial-packages.html#cb6-153" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10    j  81         0         1    7</span></span></code></pre></div>
+
+</div>
+  </main>
+
+  <div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <div id="book-on-this-page"></div>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          <li><a id="book-source" href="#">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="#">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5">
+  <div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>A Minimal Book Example</strong>" was written by John Doe. It was last built on 2022-01-11.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+<script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+
+</html>

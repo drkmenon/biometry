@@ -1,0 +1,68 @@
+# Data handling
+
+```{r}
+# create data_frame
+
+# first we have to create concatenated strings of variable
+name<-c(letters[1:10])
+age<-seq(from=63, to=82, by=2)
+type_surg<- c(0,1,0,0,1,1,1,0,0,0)
+
+# R recognizes this as a number series, we have to covert this to factor
+type_surg<-as.factor(type_surg)
+
+pri_event<-c(0,0,0,0,0,1,1,0,0,1)
+pri_event<-as.factor(pri_event)
+time<-c(24,24,24,24,24,3,2,24,24,7)
+test_data<- data.frame(name,age,type_surg,pri_event,time)
+test_data
+
+#logic operations
+
+# add new row to test_data2, cbind and rbind
+
+new_data<-c("k", 63,0,0,24)
+new_data
+
+test_data2<-rbind(test_data,new_data)
+test_data2
+
+new_data2<-c(10:1)
+test_data3<-cbind(test_data,new_data2)
+test_data3
+
+# other logic operations, on the test_data in the r basics script
+
+# is age >70?
+
+typage<-age>70
+typage[1:5]
+
+# get this answer as 0 and 1
+
+typage2<-as.numeric(age>70)
+typage2  
+
+# multiple logic operations
+
+oldtha<-age>70 & type_surg=="1"
+oldtha
+
+# add this to our data as a new column
+
+test_data
+test_data5<-cbind(test_data,oldtha)
+test_data5
+
+# Clearing workspace inr
+
+rm(list=ls())
+
+# remember how to import dataset.
+# new_datax<-read.csv(file.choose(), header = T)
+
+# create table
+# table()
+
+```
+

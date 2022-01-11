@@ -1,0 +1,141 @@
+# Data Cleaning
+
+Main actions are select(), filter(), group_by(), mutate(), summarise(),full_join(), pivot_wide() and pivot_long(), spread(), map(), strsplit()
+
+```{r}
+library(tidyverse)
+# Use read_csv/read_tsv insted of read.csv
+# This will create tibble insted of data frame
+booking= read_csv('data/bookings.csv')
+property=read_csv('data/properties.csv')
+
+booking
+property
+
+#magrittr (pipe function, keyboard short cut: command+shift+m)
+ # %>% 
+# select() and filter() functions help to extract data and study it
+
+x=booking %>% 
+  select(review_score)
+x  
+
+y=booking %>% 
+  filter(status=='stayed'&!is.na(review_score))
+y
+ 
+cheap=booking %>% 
+  select(review_score,room_nights) %>% 
+  filter(booking$price_per_night<80)
+cheap
+
+
+booking %>% 
+  filter(checkin_day=='wed') %>% 
+  select(property_id,status) %>% 
+  head(2)
+
+#ggplot2: for plotting
+# ggplot(aes()+geom_histogram()/geom_point()....
+booking %>% 
+ggplot(
+   aes(review_score)
+)+geom_histogram(bins = 100)
+ 
+booking %>% 
+  ggplot(
+    aes(price_per_night,review_score)
+  )+geom_point()
+ 
+booking %>% 
+  filter(room_nights>7, status=='stayed') %>% 
+  select(price_per_night,review_score) %>% 
+  ggplot(
+    aes(price_per_night,review_score)
+  )+geom_point()
+
+#mutate
+
+booking %>% 
+  mutate(centered_mean=price_per_night-mean(price_per_night)) %>% 
+  head(2)
+
+# summarise: extracts the number of variables
+
+booking %>% 
+  summarise(
+    n()
+    , n_miss=sum(is.na(review_score))
+    ,mean_score=mean(review_score,na.rm=T))
+
+booking %>% 
+  summarise(
+     n()
+    , stayed_booking=sum(status=='stayed')
+    , mean_total=mean(price_per_night*room_nights)                   
+                         
+  )
+#group by
+booking %>% 
+  group_by(
+    for_business
+  ) %>% 
+  summarise(
+  n=n()
+, mean_review=mean(review_score,na.rm=T))
+
+mixed=booking %>% 
+  full_join(property) %>% 
+  count(destination,checkin_day) %>% 
+  pivot_wider(
+    names_from = checkin_day,values_from = n
+  )
+mixed 
+
+# make a long data form
+
+long=mixed%>%
+  pivot_longer(cols = 2:8, names_to = 'day',values_to = 'count')
+long
+
+# make long data form
+
+wide= long %>% 
+  pivot_wider(names_from = "day", values_from = "count")
+wide
+
+
+# Boxplot with ggplot2
+booking %>% 
+  ggplot(
+    aes(
+      review_score,for_business
+    )
+  )+geom_boxplot()
+    
+# hash the property id
+# we need to know map()function to do this. map(x,~.), where x = object and ~. is a function which goes through each vector
+library(digest)
+
+property %>% 
+  mutate(property_id=map_chr(property_id,digest))
+
+# list in data frame
+# If we have a column with multiple strings, we can split it in to vectors using strsplit()
+
+
+property %>% 
+  mutate(facilities=strsplit(facilities,","))
+property$facilities[1]
+
+# add a column with the number of facilities
+
+property %>%
+  mutate(facilities=strsplit(facilities,",")) %>% 
+  mutate(n_facility=map_int(facilities,length))
+
+
+
+
+```
+

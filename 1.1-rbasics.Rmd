@@ -1,0 +1,128 @@
+# r Basics
+
+```{r}
+# find out the working directory
+getwd()
+# setwd in R
+
+setwd("/Users/drkmenon/")
+
+getwd()
+
+## change back
+```
+
+
+
+```{r}
+setwd("/Users/drkmenon/Sync/books/biometry")
+getwd()
+
+# tab key will popout a list of things we may be looking for after entering 
+# first 1-2 alphabets
+
+# save this as a project
+
+# myrstats<-save.image("myrstats.rData")
+
+# Essential packages
+```
+
+
+
+```{r}
+library(knitr)
+library(tidyverse)
+library(epiR)
+library(epiDisplay)
+library(survival)
+library(survminer)
+library(randomizeR)
+
+```
+
+
+
+```{r}
+x<- 2
+x
+# x is an object containing variable 2
+
+y<-"male"
+y
+
+# y is an object containing variable "male"
+# x is numeric/integer and "male" is factor/character
+# factors can be grouped for analysis, characters cannot be
+
+class(x)
+class(y)
+
+
+
+# Convert character to factor
+
+z= as.factor(y)
+class(z)
+#concatenation: it is a string of interconnected things
+x1<- c(1,2,3,4,5)
+x1
+
+# different methods of producing concatenated vectors
+
+x1<-c(1:5)
+x1<-seq(from=1, to=5, by=1)
+x1
+
+# we can also create repeated sequence in R
+
+x2<-rep(1, times=5)
+x2
+
+x3<-rep(seq(from=2, to=6, by=0.05), times=5)
+x3
+
+# extracting elements from concatenated string
+
+x1
+x1[3]
+x1[1:3]
+x1[c(2,4)]
+x1[-1]
+
+# Matrix of elements
+# Vector is a list of numbers/characters
+# Matrix is an array of numbers/characters in raws and columns
+
+m1<-matrix(c(1:20),nrow=5, byrow=T)
+m1
+
+# similar to vectors, matrix can be subsetted
+
+m1[c(2,3), 2]
+
+# data_frame is a type of matrix
+# we can create data_frame in R or we can import
+
+# Creating data_frame
+# first we have to create concatenated strings of variable
+name<-c(letters[1:10])
+age<-seq(from=63, to=82, by=2)
+type_surg<- c(0,1,0,0,1,1,1,0,0,0)
+
+# R recognizes this as a number series, we have to covert this to factor
+type_surg<-as.factor(type_surg)
+
+pri_event<-c(0,0,0,0,0,1,1,0,0,1)
+pri_event<-as.factor(pri_event)
+time<-c(24,24,24,24,24,3,2,24,24,7)
+test_data<- data.frame(name,age,type_surg,pri_event,time)
+test_data
+
+# subsetting can be done. important to remember to specify the column as blank 
+# after a coma
+ageo70<-test_data[age>70,]
+ageo70
+
+```
+
