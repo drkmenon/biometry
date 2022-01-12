@@ -14,9 +14,9 @@
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="bs4_style.css">
-<meta name="description" content="ageo70&lt;-test_data[age&gt;70,] ageo70  <!--chapter:end:1.1-rbasics.Rmd--> # Data handling  ```r # create data_frame # first we have to create concatenated strings of variable name&lt;-c(letters[1:10])...">
-<meta property="og:description" content="ageo70&lt;-test_data[age&gt;70,] ageo70  <!--chapter:end:1.1-rbasics.Rmd--> # Data handling  ```r # create data_frame # first we have to create concatenated strings of variable name&lt;-c(letters[1:10])...">
-<meta name="twitter:description" content="ageo70&lt;-test_data[age&gt;70,] ageo70  <!--chapter:end:1.1-rbasics.Rmd--> # Data handling  ```r # create data_frame # first we have to create concatenated strings of variable name&lt;-c(letters[1:10])...">
+<meta name="description" content='ageo70&lt;-test_data[age&gt;70,] ageo70  <!--chapter:end:1.1-rbasics.Rmd--> # r Basics find out the working directory &amp; setwd in R ```r  getwd() #&gt; [1] "/Users/drkmenon/Sync/books/biometry"  ...'>
+<meta property="og:description" content='ageo70&lt;-test_data[age&gt;70,] ageo70  <!--chapter:end:1.1-rbasics.Rmd--> # r Basics find out the working directory &amp; setwd in R ```r  getwd() #&gt; [1] "/Users/drkmenon/Sync/books/biometry"  ...'>
+<meta name="twitter:description" content='ageo70&lt;-test_data[age&gt;70,] ageo70  <!--chapter:end:1.1-rbasics.Rmd--> # r Basics find out the working directory &amp; setwd in R ```r  getwd() #&gt; [1] "/Users/drkmenon/Sync/books/biometry"  ...'>
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -43,7 +43,8 @@
 <li><a class="" href="r-recognizes-this-as-a-number-series-we-have-to-covert-this-to-factor.html"><span class="header-section-number">3</span> R recognizes this as a number series, we have to covert this to factor</a></li>
 <li><a class="" href="subsetting-can-be-done.-important-to-remember-to-specify-the-column-as-blank.html"><span class="header-section-number">4</span> subsetting can be done. important to remember to specify the column as blank</a></li>
 <li><a class="active" href="after-a-coma.html"><span class="header-section-number">5</span> after a coma</a></li>
-<li><a class="" href="data-cleaning.html"><span class="header-section-number">6</span> Data Cleaning</a></li>
+<li><a class="" href="data-handling.html"><span class="header-section-number">6</span> Data handling</a></li>
+<li><a class="" href="data-cleaning.html"><span class="header-section-number">7</span> Data Cleaning</a></li>
 <li><a class="" href="references.html">References</a></li>
 </ul>
 
@@ -62,146 +63,217 @@ ageo70</p>
 
 &lt;!--chapter:end:1.1-rbasics.Rmd--&gt;
 
-# Data handling
-
+# r Basics
+find out the working directory &amp; setwd in R
 
 ```r
-# create data_frame
+  
+getwd()
+#&gt; [1] "/Users/drkmenon/Sync/books/biometry"
+  
 
-# first we have to create concatenated strings of variable
-name&lt;-c(letters[1:10])
-age&lt;-seq(from=63, to=82, by=2)
-type_surg&lt;- c(0,1,0,0,1,1,1,0,0,0)
+setwd("/Users/drkmenon/")
 
-# R recognizes this as a number series, we have to covert this to factor
-type_surg&lt;-as.factor(type_surg)
+getwd()
+#&gt; [1] "/Users/drkmenon"</code></pre>
+<p>change back</p>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">setwd</a></span><span class="op">(</span><span class="st">"/Users/drkmenon/Sync/books/biometry"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; [1] "/Users/drkmenon/Sync/books/biometry"</span></code></pre></div>
+<p>tab key will popout a list of things we may be looking for after entering
+first 1-2 alphabets</p>
+<p>save this as a project</p>
+<p>myrstats&lt;-save.image(“myrstats.rData”)</p>
+<p>Essential packages</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
+<span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.1 ──</span>
+<span class="co">#&gt; ✓ ggplot2 3.3.5     ✓ purrr   0.3.4</span>
+<span class="co">#&gt; ✓ tibble  3.1.5     ✓ dplyr   1.0.7</span>
+<span class="co">#&gt; ✓ tidyr   1.1.4     ✓ stringr 1.4.0</span>
+<span class="co">#&gt; ✓ readr   2.0.2     ✓ forcats 0.5.1</span>
+<span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span>
+<span class="co">#&gt; x dplyr::filter() masks stats::filter()</span>
+<span class="co">#&gt; x dplyr::lag()    masks stats::lag()</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://fvas.unimelb.edu.au/research/groups/veterinary-epidemiology-melbourne">epiR</a></span><span class="op">)</span>
+<span class="co">#&gt; Loading required package: survival</span>
+<span class="co">#&gt; Package epiR 2.0.39 is loaded</span>
+<span class="co">#&gt; Type help(epi.about) for summary information</span>
+<span class="co">#&gt; Type browseVignettes(package = 'epiR') to learn how to use epiR for applied epidemiological analyses</span>
+<span class="co">#&gt; </span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">epiDisplay</span><span class="op">)</span>
+<span class="co">#&gt; Loading required package: foreign</span>
+<span class="co">#&gt; Loading required package: MASS</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Attaching package: 'MASS'</span>
+<span class="co">#&gt; The following object is masked from 'package:dplyr':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     select</span>
+<span class="co">#&gt; Loading required package: nnet</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Attaching package: 'epiDisplay'</span>
+<span class="co">#&gt; The following object is masked from 'package:ggplot2':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     alpha</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/therneau/survival">survival</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/survminer/index.html">survminer</a></span><span class="op">)</span>
+<span class="co">#&gt; Loading required package: ggpubr</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">randomizeR</span><span class="op">)</span>
+<span class="co">#&gt; Loading required package: plotrix</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span><span class="op">&lt;-</span> <span class="fl">2</span>
+<span class="va">x</span>
+<span class="co">#&gt; [1] 2</span></code></pre></div>
+<p>x is an object containing variable 2</p>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">y</span><span class="op">&lt;-</span><span class="st">"male"</span>
+<span class="va">y</span>
+<span class="co">#&gt; [1] "male"</span></code></pre></div>
+<p>y is an object containing variable “male”
+x is numeric/integer and “male” is factor/character</p>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>
+<span class="co">#&gt; [1] "numeric"</span>
+<span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span>
+<span class="co">#&gt; [1] "character"</span></code></pre></div>
+<p>concatenation: it is a string of interconnected things</p>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x1</span><span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span><span class="op">)</span>
+<span class="va">x1</span>
+<span class="co">#&gt; [1] 1 2 3 4 5</span></code></pre></div>
+<p>different methods of producing concatenated vectors</p>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x1</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span>
+<span class="va">x1</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span>from<span class="op">=</span><span class="fl">1</span>, to<span class="op">=</span><span class="fl">5</span>, by<span class="op">=</span><span class="fl">1</span><span class="op">)</span>
+<span class="va">x1</span>
+<span class="co">#&gt; [1] 1 2 3 4 5</span></code></pre></div>
+<p>we can also create repeated sequence in R</p>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x2</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">1</span>, times<span class="op">=</span><span class="fl">5</span><span class="op">)</span>
+<span class="va">x2</span>
+<span class="co">#&gt; [1] 1 1 1 1 1</span>
 
-pri_event&lt;-c(0,0,0,0,0,1,1,0,0,1)
-pri_event&lt;-as.factor(pri_event)
-time&lt;-c(24,24,24,24,24,3,2,24,24,7)
-test_data&lt;- data.frame(name,age,type_surg,pri_event,time)
-test_data
-#&gt;    name age type_surg pri_event time
-#&gt; 1     a  63         0         0   24
-#&gt; 2     b  65         1         0   24
-#&gt; 3     c  67         0         0   24
-#&gt; 4     d  69         0         0   24
-#&gt; 5     e  71         1         0   24
-#&gt; 6     f  73         1         1    3
-#&gt; 7     g  75         1         1    2
-#&gt; 8     h  77         0         0   24
-#&gt; 9     i  79         0         0   24
-#&gt; 10    j  81         0         1    7
+<span class="va">x3</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span>from<span class="op">=</span><span class="fl">2</span>, to<span class="op">=</span><span class="fl">6</span>, by<span class="op">=</span><span class="fl">0.05</span><span class="op">)</span>, times<span class="op">=</span><span class="fl">5</span><span class="op">)</span>
+<span class="va">x3</span>
+<span class="co">#&gt;   [1] 2.00 2.05 2.10 2.15 2.20 2.25 2.30 2.35 2.40 2.45 2.50</span>
+<span class="co">#&gt;  [12] 2.55 2.60 2.65 2.70 2.75 2.80 2.85 2.90 2.95 3.00 3.05</span>
+<span class="co">#&gt;  [23] 3.10 3.15 3.20 3.25 3.30 3.35 3.40 3.45 3.50 3.55 3.60</span>
+<span class="co">#&gt;  [34] 3.65 3.70 3.75 3.80 3.85 3.90 3.95 4.00 4.05 4.10 4.15</span>
+<span class="co">#&gt;  [45] 4.20 4.25 4.30 4.35 4.40 4.45 4.50 4.55 4.60 4.65 4.70</span>
+<span class="co">#&gt;  [56] 4.75 4.80 4.85 4.90 4.95 5.00 5.05 5.10 5.15 5.20 5.25</span>
+<span class="co">#&gt;  [67] 5.30 5.35 5.40 5.45 5.50 5.55 5.60 5.65 5.70 5.75 5.80</span>
+<span class="co">#&gt;  [78] 5.85 5.90 5.95 6.00 2.00 2.05 2.10 2.15 2.20 2.25 2.30</span>
+<span class="co">#&gt;  [89] 2.35 2.40 2.45 2.50 2.55 2.60 2.65 2.70 2.75 2.80 2.85</span>
+<span class="co">#&gt; [100] 2.90 2.95 3.00 3.05 3.10 3.15 3.20 3.25 3.30 3.35 3.40</span>
+<span class="co">#&gt; [111] 3.45 3.50 3.55 3.60 3.65 3.70 3.75 3.80 3.85 3.90 3.95</span>
+<span class="co">#&gt; [122] 4.00 4.05 4.10 4.15 4.20 4.25 4.30 4.35 4.40 4.45 4.50</span>
+<span class="co">#&gt; [133] 4.55 4.60 4.65 4.70 4.75 4.80 4.85 4.90 4.95 5.00 5.05</span>
+<span class="co">#&gt; [144] 5.10 5.15 5.20 5.25 5.30 5.35 5.40 5.45 5.50 5.55 5.60</span>
+<span class="co">#&gt; [155] 5.65 5.70 5.75 5.80 5.85 5.90 5.95 6.00 2.00 2.05 2.10</span>
+<span class="co">#&gt; [166] 2.15 2.20 2.25 2.30 2.35 2.40 2.45 2.50 2.55 2.60 2.65</span>
+<span class="co">#&gt; [177] 2.70 2.75 2.80 2.85 2.90 2.95 3.00 3.05 3.10 3.15 3.20</span>
+<span class="co">#&gt; [188] 3.25 3.30 3.35 3.40 3.45 3.50 3.55 3.60 3.65 3.70 3.75</span>
+<span class="co">#&gt; [199] 3.80 3.85 3.90 3.95 4.00 4.05 4.10 4.15 4.20 4.25 4.30</span>
+<span class="co">#&gt; [210] 4.35 4.40 4.45 4.50 4.55 4.60 4.65 4.70 4.75 4.80 4.85</span>
+<span class="co">#&gt; [221] 4.90 4.95 5.00 5.05 5.10 5.15 5.20 5.25 5.30 5.35 5.40</span>
+<span class="co">#&gt; [232] 5.45 5.50 5.55 5.60 5.65 5.70 5.75 5.80 5.85 5.90 5.95</span>
+<span class="co">#&gt; [243] 6.00 2.00 2.05 2.10 2.15 2.20 2.25 2.30 2.35 2.40 2.45</span>
+<span class="co">#&gt; [254] 2.50 2.55 2.60 2.65 2.70 2.75 2.80 2.85 2.90 2.95 3.00</span>
+<span class="co">#&gt; [265] 3.05 3.10 3.15 3.20 3.25 3.30 3.35 3.40 3.45 3.50 3.55</span>
+<span class="co">#&gt; [276] 3.60 3.65 3.70 3.75 3.80 3.85 3.90 3.95 4.00 4.05 4.10</span>
+<span class="co">#&gt; [287] 4.15 4.20 4.25 4.30 4.35 4.40 4.45 4.50 4.55 4.60 4.65</span>
+<span class="co">#&gt; [298] 4.70 4.75 4.80 4.85 4.90 4.95 5.00 5.05 5.10 5.15 5.20</span>
+<span class="co">#&gt; [309] 5.25 5.30 5.35 5.40 5.45 5.50 5.55 5.60 5.65 5.70 5.75</span>
+<span class="co">#&gt; [320] 5.80 5.85 5.90 5.95 6.00 2.00 2.05 2.10 2.15 2.20 2.25</span>
+<span class="co">#&gt; [331] 2.30 2.35 2.40 2.45 2.50 2.55 2.60 2.65 2.70 2.75 2.80</span>
+<span class="co">#&gt; [342] 2.85 2.90 2.95 3.00 3.05 3.10 3.15 3.20 3.25 3.30 3.35</span>
+<span class="co">#&gt; [353] 3.40 3.45 3.50 3.55 3.60 3.65 3.70 3.75 3.80 3.85 3.90</span>
+<span class="co">#&gt; [364] 3.95 4.00 4.05 4.10 4.15 4.20 4.25 4.30 4.35 4.40 4.45</span>
+<span class="co">#&gt; [375] 4.50 4.55 4.60 4.65 4.70 4.75 4.80 4.85 4.90 4.95 5.00</span>
+<span class="co">#&gt; [386] 5.05 5.10 5.15 5.20 5.25 5.30 5.35 5.40 5.45 5.50 5.55</span>
+<span class="co">#&gt; [397] 5.60 5.65 5.70 5.75 5.80 5.85 5.90 5.95 6.00</span></code></pre></div>
+<p>extracting elements from concatenated string</p>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x1</span>
+<span class="co">#&gt; [1] 1 2 3 4 5</span>
+<span class="va">x1</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span>
+<span class="co">#&gt; [1] 3</span>
+<span class="va">x1</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span>
+<span class="co">#&gt; [1] 1 2 3</span>
+<span class="va">x1</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">4</span><span class="op">)</span><span class="op">]</span>
+<span class="co">#&gt; [1] 2 4</span>
+<span class="va">x1</span><span class="op">[</span><span class="op">-</span><span class="fl">1</span><span class="op">]</span>
+<span class="co">#&gt; [1] 2 3 4 5</span></code></pre></div>
+<p>Matrix of elements
+Vector is a list of numbers/characters
+Matrix is an array of numbers/characters in raws and columns</p>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">m1</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">20</span><span class="op">)</span>,nrow<span class="op">=</span><span class="fl">5</span>, byrow<span class="op">=</span><span class="cn">T</span><span class="op">)</span>
+<span class="va">m1</span>
+<span class="co">#&gt;      [,1] [,2] [,3] [,4]</span>
+<span class="co">#&gt; [1,]    1    2    3    4</span>
+<span class="co">#&gt; [2,]    5    6    7    8</span>
+<span class="co">#&gt; [3,]    9   10   11   12</span>
+<span class="co">#&gt; [4,]   13   14   15   16</span>
+<span class="co">#&gt; [5,]   17   18   19   20</span></code></pre></div>
+<p>similar to vectors, matrix can be subsetted</p>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">m1</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span>, <span class="fl">2</span><span class="op">]</span>
+<span class="co">#&gt; [1]  6 10</span></code></pre></div>
+<p>data_frame is a type of matrix
+we can create data_frame in R or we can import
+Creating data_frame
+first we have to create concatenated strings of variable</p>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">name</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">]</span><span class="op">)</span>
+<span class="va">age</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span>from<span class="op">=</span><span class="fl">63</span>, to<span class="op">=</span><span class="fl">82</span>, by<span class="op">=</span><span class="fl">2</span><span class="op">)</span>
+<span class="va">type_surg</span><span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">1</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">1</span>,<span class="fl">1</span>,<span class="fl">1</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span><span class="op">)</span></code></pre></div>
+<p>R recognizes this as a number series, we have to covert this to factor</p>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">type_surg</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">type_surg</span><span class="op">)</span>
 
-#logic operations
-
-# add new row to test_data2, cbind and rbind
-
-new_data&lt;-c("k", 63,0,0,24)
-new_data
-#&gt; [1] "k"  "63" "0"  "0"  "24"
-
-test_data2&lt;-rbind(test_data,new_data)
-test_data2
-#&gt;    name age type_surg pri_event time
-#&gt; 1     a  63         0         0   24
-#&gt; 2     b  65         1         0   24
-#&gt; 3     c  67         0         0   24
-#&gt; 4     d  69         0         0   24
-#&gt; 5     e  71         1         0   24
-#&gt; 6     f  73         1         1    3
-#&gt; 7     g  75         1         1    2
-#&gt; 8     h  77         0         0   24
-#&gt; 9     i  79         0         0   24
-#&gt; 10    j  81         0         1    7
-#&gt; 11    k  63         0         0   24
-
-new_data2&lt;-c(10:1)
-test_data3&lt;-cbind(test_data,new_data2)
-test_data3
-#&gt;    name age type_surg pri_event time new_data2
-#&gt; 1     a  63         0         0   24        10
-#&gt; 2     b  65         1         0   24         9
-#&gt; 3     c  67         0         0   24         8
-#&gt; 4     d  69         0         0   24         7
-#&gt; 5     e  71         1         0   24         6
-#&gt; 6     f  73         1         1    3         5
-#&gt; 7     g  75         1         1    2         4
-#&gt; 8     h  77         0         0   24         3
-#&gt; 9     i  79         0         0   24         2
-#&gt; 10    j  81         0         1    7         1
-
-# other logic operations, on the test_data in the r basics script
-
-# is age &gt;70?
-
-typage&lt;-age&gt;70
-typage[1:5]
-#&gt; [1] FALSE FALSE FALSE FALSE  TRUE
-
-# get this answer as 0 and 1
-
-typage2&lt;-as.numeric(age&gt;70)
-typage2  
-#&gt;  [1] 0 0 0 0 1 1 1 1 1 1
-
-# multiple logic operations
-
-oldtha&lt;-age&gt;70 &amp; type_surg=="1"
-oldtha
-#&gt;  [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE
-#&gt; [10] FALSE
-
-# add this to our data as a new column
-
-test_data
-#&gt;    name age type_surg pri_event time
-#&gt; 1     a  63         0         0   24
-#&gt; 2     b  65         1         0   24
-#&gt; 3     c  67         0         0   24
-#&gt; 4     d  69         0         0   24
-#&gt; 5     e  71         1         0   24
-#&gt; 6     f  73         1         1    3
-#&gt; 7     g  75         1         1    2
-#&gt; 8     h  77         0         0   24
-#&gt; 9     i  79         0         0   24
-#&gt; 10    j  81         0         1    7
-test_data5&lt;-cbind(test_data,oldtha)
-test_data5
-#&gt;    name age type_surg pri_event time oldtha
-#&gt; 1     a  63         0         0   24  FALSE
-#&gt; 2     b  65         1         0   24  FALSE
-#&gt; 3     c  67         0         0   24  FALSE
-#&gt; 4     d  69         0         0   24  FALSE
-#&gt; 5     e  71         1         0   24   TRUE
-#&gt; 6     f  73         1         1    3   TRUE
-#&gt; 7     g  75         1         1    2   TRUE
-#&gt; 8     h  77         0         0   24  FALSE
-#&gt; 9     i  79         0         0   24  FALSE
-#&gt; 10    j  81         0         1    7  FALSE
-
-# Clearing workspace inr
-
-rm(list=ls())
-
-# remember how to import dataset.
-# new_datax&lt;-read.csv(file.choose(), header = T)
-
-# create table
-# table()</code></pre>
+<span class="va">pri_event</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">1</span>,<span class="fl">1</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span>
+<span class="va">pri_event</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">pri_event</span><span class="op">)</span>
+<span class="va">time</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">24</span>,<span class="fl">24</span>,<span class="fl">24</span>,<span class="fl">24</span>,<span class="fl">24</span>,<span class="fl">3</span>,<span class="fl">2</span>,<span class="fl">24</span>,<span class="fl">24</span>,<span class="fl">7</span><span class="op">)</span>
+<span class="va">test_data</span><span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">name</span>,<span class="va">age</span>,<span class="va">type_surg</span>,<span class="va">pri_event</span>,<span class="va">time</span><span class="op">)</span>
+<span class="va">test_data</span>
+<span class="co">#&gt;    name age type_surg pri_event time</span>
+<span class="co">#&gt; 1     a  63         0         0   24</span>
+<span class="co">#&gt; 2     b  65         1         0   24</span>
+<span class="co">#&gt; 3     c  67         0         0   24</span>
+<span class="co">#&gt; 4     d  69         0         0   24</span>
+<span class="co">#&gt; 5     e  71         1         0   24</span>
+<span class="co">#&gt; 6     f  73         1         1    3</span>
+<span class="co">#&gt; 7     g  75         1         1    2</span>
+<span class="co">#&gt; 8     h  77         0         0   24</span>
+<span class="co">#&gt; 9     i  79         0         0   24</span>
+<span class="co">#&gt; 10    j  81         0         1    7</span></code></pre></div>
+<p>subsetting can be done. important to remember to specify the column as blank after a coma</p>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">ageo70</span><span class="op">&lt;-</span><span class="va">test_data</span><span class="op">[</span><span class="va">age</span><span class="op">&gt;</span><span class="fl">70</span>,<span class="op">]</span>
+<span class="va">ageo70</span>
+<span class="co">#&gt;    name age type_surg pri_event time</span>
+<span class="co">#&gt; 5     e  71         1         0   24</span>
+<span class="co">#&gt; 6     f  73         1         1    3</span>
+<span class="co">#&gt; 7     g  75         1         1    2</span>
+<span class="co">#&gt; 8     h  77         0         0   24</span>
+<span class="co">#&gt; 9     i  79         0         0   24</span>
+<span class="co">#&gt; 10    j  81         0         1    7</span></code></pre></div>
 
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="subsetting-can-be-done.-important-to-remember-to-specify-the-column-as-blank.html"><span class="header-section-number">4</span> subsetting can be done. important to remember to specify the column as blank</a></div>
-<div class="next"><a href="data-cleaning.html"><span class="header-section-number">6</span> Data Cleaning</a></div>
+<div class="next"><a href="data-handling.html"><span class="header-section-number">6</span> Data handling</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav"><li><a class="nav-link" href="#after-a-coma"><span class="header-section-number">5</span> after a coma</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/drkmenon/biometry/blob/master/1.2-data.handling.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/drkmenon/biometry/edit/master/1.2-data.handling.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/drkmenon/biometry/blob/master/1.1rbasics.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/drkmenon/biometry/edit/master/1.1rbasics.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

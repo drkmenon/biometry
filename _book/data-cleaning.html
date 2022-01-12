@@ -4,12 +4,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 6 Data Cleaning | biometry</title>
+<title>Chapter 4 Data Cleaning | biometry</title>
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 6 Data Cleaning | biometry">
+<meta property="og:title" content="Chapter 4 Data Cleaning | biometry">
 <meta property="og:type" content="book">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 6 Data Cleaning | biometry">
+<meta name="twitter:title" content="Chapter 4 Data Cleaning | biometry">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -40,10 +40,8 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
 <li><a class="" href="r-basics.html"><span class="header-section-number">2</span> r Basics</a></li>
-<li><a class="" href="r-recognizes-this-as-a-number-series-we-have-to-covert-this-to-factor.html"><span class="header-section-number">3</span> R recognizes this as a number series, we have to covert this to factor</a></li>
-<li><a class="" href="subsetting-can-be-done.-important-to-remember-to-specify-the-column-as-blank.html"><span class="header-section-number">4</span> subsetting can be done. important to remember to specify the column as blank</a></li>
-<li><a class="" href="after-a-coma.html"><span class="header-section-number">5</span> after a coma</a></li>
-<li><a class="active" href="data-cleaning.html"><span class="header-section-number">6</span> Data Cleaning</a></li>
+<li><a class="" href="data-handling.html"><span class="header-section-number">3</span> Data handling</a></li>
+<li><a class="active" href="data-cleaning.html"><span class="header-section-number">4</span> Data Cleaning</a></li>
 <li><a class="" href="references.html">References</a></li>
 </ul>
 
@@ -52,12 +50,12 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="data-cleaning" class="section level1" number="6">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="data-cleaning" class="section level1" number="4">
 <h1>
-<span class="header-section-number">6</span> Data Cleaning<a class="anchor" aria-label="anchor" href="#data-cleaning"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4</span> Data Cleaning<a class="anchor" aria-label="anchor" href="#data-cleaning"><i class="fas fa-link"></i></a>
 </h1>
 <p>Main actions are select(), filter(), group_by(), mutate(), summarise(),full_join(), pivot_wide() and pivot_long(), spread(), map(), strsplit()</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.1 ──</span>
 <span class="co">#&gt; ✓ ggplot2 3.3.5     ✓ purrr   0.3.4</span>
@@ -203,7 +201,7 @@
 <span class="co">#&gt; Warning: Removed 3817 rows containing non-finite values</span>
 <span class="co">#&gt; (stat_bin).</span></code></pre></div>
 <div class="inline-figure"><img src="1.3-data.cleaning_files/figure-html/unnamed-chunk-1-1.png" width="672"></div>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"> 
 <span class="va">booking</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>
@@ -212,7 +210,7 @@
 <span class="co">#&gt; Warning: Removed 3817 rows containing missing values</span>
 <span class="co">#&gt; (geom_point).</span></code></pre></div>
 <div class="inline-figure"><img src="1.3-data.cleaning_files/figure-html/unnamed-chunk-1-2.png" width="672"></div>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"> 
 <span class="va">booking</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">room_nights</span><span class="op">&gt;</span><span class="fl">7</span>, <span class="va">status</span><span class="op">==</span><span class="st">'stayed'</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
@@ -223,7 +221,7 @@
 <span class="co">#&gt; Warning: Removed 41 rows containing missing values</span>
 <span class="co">#&gt; (geom_point).</span></code></pre></div>
 <div class="inline-figure"><img src="1.3-data.cleaning_files/figure-html/unnamed-chunk-1-3.png" width="672"></div>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="co">#mutate</span>
 
@@ -334,7 +332,7 @@
 <span class="co">#&gt; Warning: Removed 3817 rows containing non-finite values</span>
 <span class="co">#&gt; (stat_boxplot).</span></code></pre></div>
 <div class="inline-figure"><img src="1.3-data.cleaning_files/figure-html/unnamed-chunk-1-4.png" width="672"></div>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R">    
 <span class="co"># hash the property id</span>
 <span class="co"># we need to know map()function to do this. map(x,~.), where x = object and ~. is a function which goes through each vector</span>
@@ -403,11 +401,11 @@
 
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="after-a-coma.html"><span class="header-section-number">5</span> after a coma</a></div>
+<div class="prev"><a href="data-handling.html"><span class="header-section-number">3</span> Data handling</a></div>
 <div class="next"><a href="references.html">References</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#data-cleaning"><span class="header-section-number">6</span> Data Cleaning</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#data-cleaning"><span class="header-section-number">4</span> Data Cleaning</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
