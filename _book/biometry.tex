@@ -422,18 +422,22 @@ subsetting can be done. important to remember to specify the column as blank aft
 \end{Shaded}
 
 \hypertarget{data-handling}{%
-\section{Data handling}\label{data-handling}}
+\section{Data Handling}\label{data-handling}}
+
+first we have to create concatenated strings of variable
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# create data\_frame}
-
-\CommentTok{\# first we have to create concatenated strings of variable}
 \NormalTok{name}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(letters[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{])}
 \NormalTok{age}\OtherTok{\textless{}{-}}\FunctionTok{seq}\NormalTok{(}\AttributeTok{from=}\DecValTok{63}\NormalTok{, }\AttributeTok{to=}\DecValTok{82}\NormalTok{, }\AttributeTok{by=}\DecValTok{2}\NormalTok{)}
 \NormalTok{type\_surg}\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
-\CommentTok{\# R recognizes this as a number series, we have to covert this to factor}
+R recognizes this as a number series, we have to covert this to factor
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{type\_surg}\OtherTok{\textless{}{-}}\FunctionTok{as.factor}\NormalTok{(type\_surg)}
 
 \NormalTok{pri\_event}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{)}
@@ -452,11 +456,14 @@ subsetting can be done. important to remember to specify the column as blank aft
 \CommentTok{\#\textgreater{} 8     h  77         0         0   24}
 \CommentTok{\#\textgreater{} 9     i  79         0         0   24}
 \CommentTok{\#\textgreater{} 10    j  81         0         1    7}
+\end{Highlighting}
+\end{Shaded}
 
-\CommentTok{\#logic operations}
+logic operations
+add new row to test\_data2, cbind and rbind
 
-\CommentTok{\# add new row to test\_data2, cbind and rbind}
-
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{new\_data}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\StringTok{"k"}\NormalTok{, }\DecValTok{63}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{24}\NormalTok{)}
 \NormalTok{new\_data}
 \CommentTok{\#\textgreater{} [1] "k"  "63" "0"  "0"  "24"}
@@ -490,30 +497,45 @@ subsetting can be done. important to remember to specify the column as blank aft
 \CommentTok{\#\textgreater{} 8     h  77         0         0   24         3}
 \CommentTok{\#\textgreater{} 9     i  79         0         0   24         2}
 \CommentTok{\#\textgreater{} 10    j  81         0         1    7         1}
+\end{Highlighting}
+\end{Shaded}
 
-\CommentTok{\# other logic operations, on the test\_data in the r basics script}
+other logic operations, on the test\_data in the r basics script
+is age \textgreater70?
 
-\CommentTok{\# is age \textgreater{}70?}
-
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{typage}\OtherTok{\textless{}{-}}\NormalTok{age}\SpecialCharTok{\textgreater{}}\DecValTok{70}
 \NormalTok{typage[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{5}\NormalTok{]}
 \CommentTok{\#\textgreater{} [1] FALSE FALSE FALSE FALSE  TRUE}
+\end{Highlighting}
+\end{Shaded}
 
-\CommentTok{\# get this answer as 0 and 1}
+get this answer as 0 and 1
 
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{typage2}\OtherTok{\textless{}{-}}\FunctionTok{as.numeric}\NormalTok{(age}\SpecialCharTok{\textgreater{}}\DecValTok{70}\NormalTok{)}
 \NormalTok{typage2  }
 \CommentTok{\#\textgreater{}  [1] 0 0 0 0 1 1 1 1 1 1}
+\end{Highlighting}
+\end{Shaded}
 
-\CommentTok{\# multiple logic operations}
+multiple logic operations
 
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{oldtha}\OtherTok{\textless{}{-}}\NormalTok{age}\SpecialCharTok{\textgreater{}}\DecValTok{70} \SpecialCharTok{\&}\NormalTok{ type\_surg}\SpecialCharTok{==}\StringTok{"1"}
 \NormalTok{oldtha}
 \CommentTok{\#\textgreater{}  [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE}
 \CommentTok{\#\textgreater{} [10] FALSE}
+\end{Highlighting}
+\end{Shaded}
 
-\CommentTok{\# add this to our data as a new column}
+add this to our data as a new column
 
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{test\_data}
 \CommentTok{\#\textgreater{}    name age type\_surg pri\_event time}
 \CommentTok{\#\textgreater{} 1     a  63         0         0   24}
@@ -539,23 +561,27 @@ subsetting can be done. important to remember to specify the column as blank aft
 \CommentTok{\#\textgreater{} 8     h  77         0         0   24  FALSE}
 \CommentTok{\#\textgreater{} 9     i  79         0         0   24  FALSE}
 \CommentTok{\#\textgreater{} 10    j  81         0         1    7  FALSE}
-
-\CommentTok{\# Clearing workspace inr}
-
-\FunctionTok{rm}\NormalTok{(}\AttributeTok{list=}\FunctionTok{ls}\NormalTok{())}
-
-\CommentTok{\# remember how to import dataset.}
-\CommentTok{\# new\_datax\textless{}{-}read.csv(file.choose(), header = T)}
-
-\CommentTok{\# create table}
-\CommentTok{\# table()}
 \end{Highlighting}
 \end{Shaded}
+
+Clearing workspace inr
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{rm}\NormalTok{(}\AttributeTok{list=}\FunctionTok{ls}\NormalTok{())}
+\end{Highlighting}
+\end{Shaded}
+
+remember how to import dataset.
+new\_datax\textless-read.csv(file.choose(), header = T)
+create table
+table()
 
 \hypertarget{data-cleaning}{%
 \section{Data Cleaning}\label{data-cleaning}}
 
-Main actions are select(), filter(), group\_by(), mutate(), summarise(),full\_join(), pivot\_wide() and pivot\_long(), spread(), map(), strsplit()
+Main actions are select(), filter(), group\_by(), mutate(), summarise(),
+full\_join(), pivot\_wide() and pivot\_long(), spread(), map(), strsplit(), broom()
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -568,8 +594,14 @@ Main actions are select(), filter(), group\_by(), mutate(), summarise(),full\_jo
 \CommentTok{\#\textgreater{} {-}{-} Conflicts {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-} tidyverse\_conflicts() {-}{-}}
 \CommentTok{\#\textgreater{} x dplyr::filter() masks stats::filter()}
 \CommentTok{\#\textgreater{} x dplyr::lag()    masks stats::lag()}
-\CommentTok{\# Use read\_csv/read\_tsv insted of read.csv}
-\CommentTok{\# This will create tibble insted of data frame}
+\end{Highlighting}
+\end{Shaded}
+
+Use read\_csv/read\_tsv insted of read.csv
+This will create tibble insted of data frame
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{booking}\OtherTok{=} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{\textquotesingle{}data/bookings.csv\textquotesingle{}}\NormalTok{)}
 \CommentTok{\#\textgreater{} Rows: 10000 Columns: 8}
 \CommentTok{\#\textgreater{} {-}{-} Column specification {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
@@ -622,11 +654,15 @@ Main actions are select(), filter(), group\_by(), mutate(), summarise(),full\_jo
 \CommentTok{\#\textgreater{}  9        1696 Brisbane    Apartment            5 free wifi\textasciitilde{}}
 \CommentTok{\#\textgreater{} 10        1901 Brisbane    Apartment           11 free wifi\textasciitilde{}}
 \CommentTok{\#\textgreater{} \# ... with 4,168 more rows}
+\end{Highlighting}
+\end{Shaded}
 
-\CommentTok{\#magrittr (pipe function, keyboard short cut: command+shift+m)}
- \CommentTok{\# \%\textgreater{}\% }
-\CommentTok{\# select() and filter() functions help to extract data and study it}
+magrittr (pipe function, keyboard short cut: command+shift+m)
+\%\textgreater\%
+select() and filter() functions help to extract data and study it
 
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{x}\OtherTok{=}\NormalTok{booking }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{select}\NormalTok{(review\_score)}
 \NormalTok{x  }
@@ -664,7 +700,7 @@ Main actions are select(), filter(), group\_by(), mutate(), summarise(),full\_jo
 \CommentTok{\#\textgreater{} \# ... with 6,173 more rows, and 4 more variables:}
 \CommentTok{\#\textgreater{} \#   checkin\_day \textless{}chr\textgreater{}, for\_business \textless{}lgl\textgreater{}, status \textless{}chr\textgreater{},}
 \CommentTok{\#\textgreater{} \#   review\_score \textless{}dbl\textgreater{}}
- 
+
 \NormalTok{cheap}\OtherTok{=}\NormalTok{booking }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{select}\NormalTok{(review\_score,room\_nights) }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{filter}\NormalTok{(booking}\SpecialCharTok{$}\NormalTok{price\_per\_night}\SpecialCharTok{\textless{}}\DecValTok{80}\NormalTok{)}
@@ -694,23 +730,28 @@ Main actions are select(), filter(), group\_by(), mutate(), summarise(),full\_jo
 \CommentTok{\#\textgreater{}         \textless{}dbl\textgreater{} \textless{}chr\textgreater{}    }
 \CommentTok{\#\textgreater{} 1        4563 stayed   }
 \CommentTok{\#\textgreater{} 2        5141 cancelled}
+\end{Highlighting}
+\end{Shaded}
 
-\CommentTok{\#ggplot2: for plotting}
-\CommentTok{\# ggplot(aes()+geom\_histogram()/geom\_point()....}
+ggplot2: for plotting
+ggplot(aes()+geom\_histogram()/geom\_point()\ldots.
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{booking }\SpecialCharTok{\%\textgreater{}\%} 
-\FunctionTok{ggplot}\NormalTok{(}
-   \FunctionTok{aes}\NormalTok{(review\_score)}
-\NormalTok{)}\SpecialCharTok{+}\FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins =} \DecValTok{100}\NormalTok{)}
+  \FunctionTok{ggplot}\NormalTok{(}
+    \FunctionTok{aes}\NormalTok{(review\_score)}
+\NormalTok{  )}\SpecialCharTok{+}\FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins =} \DecValTok{100}\NormalTok{)}
 \CommentTok{\#\textgreater{} Warning: Removed 3817 rows containing non{-}finite values}
 \CommentTok{\#\textgreater{} (stat\_bin).}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{1.3-data.cleaning_files/figure-latex/unnamed-chunk-1-1.pdf}
+\includegraphics{1.3-dclean_files/figure-latex/unnamed-chunk-4-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
- 
+
 \NormalTok{booking }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{ggplot}\NormalTok{(}
     \FunctionTok{aes}\NormalTok{(price\_per\_night,review\_score)}
@@ -720,11 +761,11 @@ Main actions are select(), filter(), group\_by(), mutate(), summarise(),full\_jo
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{1.3-data.cleaning_files/figure-latex/unnamed-chunk-1-2.pdf}
+\includegraphics{1.3-dclean_files/figure-latex/unnamed-chunk-4-2.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
- 
+
 \NormalTok{booking }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{filter}\NormalTok{(room\_nights}\SpecialCharTok{\textgreater{}}\DecValTok{7}\NormalTok{, status}\SpecialCharTok{==}\StringTok{\textquotesingle{}stayed\textquotesingle{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{select}\NormalTok{(price\_per\_night,review\_score) }\SpecialCharTok{\%\textgreater{}\%} 
@@ -736,13 +777,12 @@ Main actions are select(), filter(), group\_by(), mutate(), summarise(),full\_jo
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{1.3-data.cleaning_files/figure-latex/unnamed-chunk-1-3.pdf}
+\includegraphics{1.3-dclean_files/figure-latex/unnamed-chunk-4-3.pdf}
+
+mutate
 
 \begin{Shaded}
 \begin{Highlighting}[]
-
-\CommentTok{\#mutate}
-
 \NormalTok{booking }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{mutate}\NormalTok{(}\AttributeTok{centered\_mean=}\NormalTok{price\_per\_night}\SpecialCharTok{{-}}\FunctionTok{mean}\NormalTok{(price\_per\_night)) }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{head}\NormalTok{(}\DecValTok{2}\NormalTok{)}
@@ -754,9 +794,13 @@ Main actions are select(), filter(), group\_by(), mutate(), summarise(),full\_jo
 \CommentTok{\#\textgreater{} \# ... with 5 more variables: checkin\_day \textless{}chr\textgreater{},}
 \CommentTok{\#\textgreater{} \#   for\_business \textless{}lgl\textgreater{}, status \textless{}chr\textgreater{}, review\_score \textless{}dbl\textgreater{},}
 \CommentTok{\#\textgreater{} \#   centered\_mean \textless{}dbl\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
 
-\CommentTok{\# summarise: extracts the number of variables}
+summarise: extracts the number of variables
 
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{booking }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{summarise}\NormalTok{(}
     \FunctionTok{n}\NormalTok{()}
@@ -769,23 +813,29 @@ Main actions are select(), filter(), group\_by(), mutate(), summarise(),full\_jo
 
 \NormalTok{booking }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{summarise}\NormalTok{(}
-     \FunctionTok{n}\NormalTok{()}
+    \FunctionTok{n}\NormalTok{()}
 \NormalTok{    , }\AttributeTok{stayed\_booking=}\FunctionTok{sum}\NormalTok{(status}\SpecialCharTok{==}\StringTok{\textquotesingle{}stayed\textquotesingle{}}\NormalTok{)}
 \NormalTok{    , }\AttributeTok{mean\_total=}\FunctionTok{mean}\NormalTok{(price\_per\_night}\SpecialCharTok{*}\NormalTok{room\_nights)                   }
-                         
+    
 \NormalTok{  )}
 \CommentTok{\#\textgreater{} \# A tibble: 1 x 3}
 \CommentTok{\#\textgreater{}   \textasciigrave{}n()\textasciigrave{} stayed\_booking mean\_total}
 \CommentTok{\#\textgreater{}   \textless{}int\textgreater{}          \textless{}int\textgreater{}      \textless{}dbl\textgreater{}}
 \CommentTok{\#\textgreater{} 1 10000           7775       348.}
-\CommentTok{\#group by}
+\end{Highlighting}
+\end{Shaded}
+
+group by
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{booking }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{group\_by}\NormalTok{(}
 \NormalTok{    for\_business}
 \NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{summarise}\NormalTok{(}
-  \AttributeTok{n=}\FunctionTok{n}\NormalTok{()}
-\NormalTok{, }\AttributeTok{mean\_review=}\FunctionTok{mean}\NormalTok{(review\_score,}\AttributeTok{na.rm=}\NormalTok{T))}
+    \AttributeTok{n=}\FunctionTok{n}\NormalTok{()}
+\NormalTok{    , }\AttributeTok{mean\_review=}\FunctionTok{mean}\NormalTok{(review\_score,}\AttributeTok{na.rm=}\NormalTok{T))}
 \CommentTok{\#\textgreater{} \# A tibble: 2 x 3}
 \CommentTok{\#\textgreater{}   for\_business     n mean\_review}
 \CommentTok{\#\textgreater{}   \textless{}lgl\textgreater{}        \textless{}int\textgreater{}       \textless{}dbl\textgreater{}}
@@ -806,9 +856,13 @@ Main actions are select(), filter(), group\_by(), mutate(), summarise(),full\_jo
 \CommentTok{\#\textgreater{} 1 Amsterdam    1074   517   889   813   667   498   542}
 \CommentTok{\#\textgreater{} 2 Brisbane      162   133   114   153   162   148   128}
 \CommentTok{\#\textgreater{} 3 Tokyo         451   718   322   576   718   655   560}
+\end{Highlighting}
+\end{Shaded}
 
-\CommentTok{\# make a long data form}
+make a long data form
 
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{long}\OtherTok{=}\NormalTok{mixed}\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{pivot\_longer}\NormalTok{(}\AttributeTok{cols =} \DecValTok{2}\SpecialCharTok{:}\DecValTok{8}\NormalTok{, }\AttributeTok{names\_to =} \StringTok{\textquotesingle{}day\textquotesingle{}}\NormalTok{,}\AttributeTok{values\_to =} \StringTok{\textquotesingle{}count\textquotesingle{}}\NormalTok{)}
 \NormalTok{long}
@@ -826,9 +880,13 @@ Main actions are select(), filter(), group\_by(), mutate(), summarise(),full\_jo
 \CommentTok{\#\textgreater{}  9 Brisbane    mon     133}
 \CommentTok{\#\textgreater{} 10 Brisbane    sat     114}
 \CommentTok{\#\textgreater{} \# ... with 11 more rows}
+\end{Highlighting}
+\end{Shaded}
 
-\CommentTok{\# make long data form}
+make long data form
 
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{wide}\OtherTok{=}\NormalTok{ long }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{pivot\_wider}\NormalTok{(}\AttributeTok{names\_from =} \StringTok{"day"}\NormalTok{, }\AttributeTok{values\_from =} \StringTok{"count"}\NormalTok{)}
 \NormalTok{wide}
@@ -838,9 +896,13 @@ Main actions are select(), filter(), group\_by(), mutate(), summarise(),full\_jo
 \CommentTok{\#\textgreater{} 1 Amsterdam    1074   517   889   813   667   498   542}
 \CommentTok{\#\textgreater{} 2 Brisbane      162   133   114   153   162   148   128}
 \CommentTok{\#\textgreater{} 3 Tokyo         451   718   322   576   718   655   560}
+\end{Highlighting}
+\end{Shaded}
 
+Boxplot with ggplot2
 
-\CommentTok{\# Boxplot with ggplot2}
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{booking }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{ggplot}\NormalTok{(}
     \FunctionTok{aes}\NormalTok{(}
@@ -852,13 +914,13 @@ Main actions are select(), filter(), group\_by(), mutate(), summarise(),full\_jo
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{1.3-data.cleaning_files/figure-latex/unnamed-chunk-1-4.pdf}
+\includegraphics{1.3-dclean_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+hash the property id
+we need to know map()function to do this. map(x,\textasciitilde.), where x = object and \textasciitilde. is a function which goes through each vector
 
 \begin{Shaded}
 \begin{Highlighting}[]
-    
-\CommentTok{\# hash the property id}
-\CommentTok{\# we need to know map()function to do this. map(x,\textasciitilde{}.), where x = object and \textasciitilde{}. is a function which goes through each vector}
 \FunctionTok{library}\NormalTok{(digest)}
 
 \NormalTok{property }\SpecialCharTok{\%\textgreater{}\%} 
@@ -877,11 +939,14 @@ Main actions are select(), filter(), group\_by(), mutate(), summarise(),full\_jo
 \CommentTok{\#\textgreater{}  9 7319c32a43\textasciitilde{} Brisbane    Apartment            5 free wifi\textasciitilde{}}
 \CommentTok{\#\textgreater{} 10 a38cc66d5f\textasciitilde{} Brisbane    Apartment           11 free wifi\textasciitilde{}}
 \CommentTok{\#\textgreater{} \# ... with 4,168 more rows}
+\end{Highlighting}
+\end{Shaded}
 
-\CommentTok{\# list in data frame}
-\CommentTok{\# If we have a column with multiple strings, we can split it in to vectors using strsplit()}
+list in data frame
+If we have a column with multiple strings, we can split it in to vectors using strsplit()
 
-
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{property }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{mutate}\NormalTok{(}\AttributeTok{facilities=}\FunctionTok{strsplit}\NormalTok{(facilities,}\StringTok{","}\NormalTok{))}
 \CommentTok{\#\textgreater{} \# A tibble: 4,178 x 5}
@@ -900,9 +965,13 @@ Main actions are select(), filter(), group\_by(), mutate(), summarise(),full\_jo
 \CommentTok{\#\textgreater{} \# ... with 4,168 more rows}
 \NormalTok{property}\SpecialCharTok{$}\NormalTok{facilities[}\DecValTok{1}\NormalTok{]}
 \CommentTok{\#\textgreater{} [1] "airport shuttle,free wifi,garden,breakfast,pool,on{-}site restaurant"}
+\end{Highlighting}
+\end{Shaded}
 
-\CommentTok{\# add a column with the number of facilities}
+add a column with the number of facilities
 
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{property }\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{mutate}\NormalTok{(}\AttributeTok{facilities=}\FunctionTok{strsplit}\NormalTok{(facilities,}\StringTok{","}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{mutate}\NormalTok{(}\AttributeTok{n\_facility=}\FunctionTok{map\_int}\NormalTok{(facilities,length))}
