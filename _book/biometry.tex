@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
-]{book}
+]{article}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{iftex}
@@ -36,8 +36,6 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Biometry for Clinical Research},
-  pdfauthor={Kishore Puthezhath},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
@@ -113,26 +111,42 @@
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{natbib}
-\bibliographystyle{apalike}
+\bibliographystyle{plainnat}
 
-\title{Biometry for Clinical Research}
-\author{Kishore Puthezhath}
-\date{2022-01-11}
+\author{}
+\date{\vspace{-2.5em}}
 
 \begin{document}
-\maketitle
 
 {
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
 \tableofcontents
 }
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{0.0694}}@{}}
+\toprule
+\endhead
+title: ``Biometry for Clinical Research''
+author: ``Kishore Puthezhath''
+date: ``2022-01-12''
+site: bookdown::bookdown\_site
+documentclass: book
+bibliography: {[}book.bib, packages.bib{]}
+\# url: your book url like \url{https://bookdown.org/yihui/bookdown}
+\# cover-image: path to the social sharing image like images/cover.jpg
+description: \textbar{} \\
+biblio-style: apalike
+csl: chicago-fullnote-bibliography.csl \\
+\bottomrule
+\end{longtable}
+
 \hypertarget{about}{%
-\chapter{About}\label{about}}
+\section{About}\label{about}}
 
 ``Scientific etiquette demands that a field be defined before its study is begun''-R R Sokal. \emph{Bios} means ``life'' and \emph{metron} means ``measure''.
 
 \hypertarget{r-basics}{%
-\chapter{r Basics}\label{r-basics}}
+\section{r Basics}\label{r-basics}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -212,42 +226,67 @@
 \NormalTok{x}\OtherTok{\textless{}{-}} \DecValTok{2}
 \NormalTok{x}
 \CommentTok{\#\textgreater{} [1] 2}
-\CommentTok{\# x is an object containing variable 2}
+\end{Highlighting}
+\end{Shaded}
 
+x is an object containing variable 2
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{y}\OtherTok{\textless{}{-}}\StringTok{"male"}
 \NormalTok{y}
 \CommentTok{\#\textgreater{} [1] "male"}
+\end{Highlighting}
+\end{Shaded}
 
-\CommentTok{\# y is an object containing variable "male"}
-\CommentTok{\# x is numeric/integer and "male" is factor/character}
-\CommentTok{\# factors can be grouped for analysis, characters cannot be}
+y is an object containing variable ``male''
+x is numeric/integer and ``male'' is factor/character
+factors can be grouped for analysis, characters cannot be
 
+\begin{Shaded}
+\begin{Highlighting}[]
 \FunctionTok{class}\NormalTok{(x)}
 \CommentTok{\#\textgreater{} [1] "numeric"}
 \FunctionTok{class}\NormalTok{(y)}
 \CommentTok{\#\textgreater{} [1] "character"}
+\end{Highlighting}
+\end{Shaded}
 
+Convert character to factor
 
-
-\CommentTok{\# Convert character to factor}
-
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{z}\OtherTok{=} \FunctionTok{as.factor}\NormalTok{(y)}
 \FunctionTok{class}\NormalTok{(z)}
 \CommentTok{\#\textgreater{} [1] "factor"}
-\CommentTok{\#concatenation: it is a string of interconnected things}
+\end{Highlighting}
+\end{Shaded}
+
+concatenation: it is a string of interconnected things
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{x1}\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{)}
 \NormalTok{x1}
 \CommentTok{\#\textgreater{} [1] 1 2 3 4 5}
+\end{Highlighting}
+\end{Shaded}
 
-\CommentTok{\# different methods of producing concatenated vectors}
+different methods of producing concatenated vectors
 
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{x1}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{5}\NormalTok{)}
 \NormalTok{x1}\OtherTok{\textless{}{-}}\FunctionTok{seq}\NormalTok{(}\AttributeTok{from=}\DecValTok{1}\NormalTok{, }\AttributeTok{to=}\DecValTok{5}\NormalTok{, }\AttributeTok{by=}\DecValTok{1}\NormalTok{)}
 \NormalTok{x1}
 \CommentTok{\#\textgreater{} [1] 1 2 3 4 5}
+\end{Highlighting}
+\end{Shaded}
 
-\CommentTok{\# we can also create repeated sequence in R}
+we can also create repeated sequence in R
 
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{x2}\OtherTok{\textless{}{-}}\FunctionTok{rep}\NormalTok{(}\DecValTok{1}\NormalTok{, }\AttributeTok{times=}\DecValTok{5}\NormalTok{)}
 \NormalTok{x2}
 \CommentTok{\#\textgreater{} [1] 1 1 1 1 1}
@@ -291,9 +330,13 @@
 \CommentTok{\#\textgreater{} [375] 4.50 4.55 4.60 4.65 4.70 4.75 4.80 4.85 4.90 4.95 5.00}
 \CommentTok{\#\textgreater{} [386] 5.05 5.10 5.15 5.20 5.25 5.30 5.35 5.40 5.45 5.50 5.55}
 \CommentTok{\#\textgreater{} [397] 5.60 5.65 5.70 5.75 5.80 5.85 5.90 5.95 6.00}
+\end{Highlighting}
+\end{Shaded}
 
-\CommentTok{\# extracting elements from concatenated string}
+extracting elements from concatenated string
 
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{x1}
 \CommentTok{\#\textgreater{} [1] 1 2 3 4 5}
 \NormalTok{x1[}\DecValTok{3}\NormalTok{]}
@@ -304,11 +347,15 @@
 \CommentTok{\#\textgreater{} [1] 2 4}
 \NormalTok{x1[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]}
 \CommentTok{\#\textgreater{} [1] 2 3 4 5}
+\end{Highlighting}
+\end{Shaded}
 
-\CommentTok{\# Matrix of elements}
-\CommentTok{\# Vector is a list of numbers/characters}
-\CommentTok{\# Matrix is an array of numbers/characters in raws and columns}
+Matrix of elements
+Vector is a list of numbers/characters
+Matrix is an array of numbers/characters in raws and columns
 
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{m1}\OtherTok{\textless{}{-}}\FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{20}\NormalTok{),}\AttributeTok{nrow=}\DecValTok{5}\NormalTok{, }\AttributeTok{byrow=}\NormalTok{T)}
 \NormalTok{m1}
 \CommentTok{\#\textgreater{}      [,1] [,2] [,3] [,4]}
@@ -317,188 +364,182 @@
 \CommentTok{\#\textgreater{} [3,]    9   10   11   12}
 \CommentTok{\#\textgreater{} [4,]   13   14   15   16}
 \CommentTok{\#\textgreater{} [5,]   17   18   19   20}
-
-\CommentTok{\# similar to vectors, matrix can be subsetted}
-
-\NormalTok{m1[}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{), }\DecValTok{2}\NormalTok{]}
-\CommentTok{\#\textgreater{} [1]  6 10}
-
-\CommentTok{\# data\_frame is a type of matrix}
-\CommentTok{\# we can create data\_frame in R or we can import}
-
-\CommentTok{\# Creating data\_frame}
-\CommentTok{\# first we have to create concatenated strings of variable}
-\NormalTok{name}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(letters[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{])}
-\NormalTok{age}\OtherTok{\textless{}{-}}\FunctionTok{seq}\NormalTok{(}\AttributeTok{from=}\DecValTok{63}\NormalTok{, }\AttributeTok{to=}\DecValTok{82}\NormalTok{, }\AttributeTok{by=}\DecValTok{2}\NormalTok{)}
-\NormalTok{type\_surg}\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{)}
-
-\CommentTok{\# R recognizes this as a number series, we have to covert this to factor}
-\NormalTok{type\_surg}\OtherTok{\textless{}{-}}\FunctionTok{as.factor}\NormalTok{(type\_surg)}
-
-\NormalTok{pri\_event}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{)}
-\NormalTok{pri\_event}\OtherTok{\textless{}{-}}\FunctionTok{as.factor}\NormalTok{(pri\_event)}
-\NormalTok{time}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{24}\NormalTok{,}\DecValTok{24}\NormalTok{,}\DecValTok{24}\NormalTok{,}\DecValTok{24}\NormalTok{,}\DecValTok{24}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{24}\NormalTok{,}\DecValTok{24}\NormalTok{,}\DecValTok{7}\NormalTok{)}
-\NormalTok{test\_data}\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(name,age,type\_surg,pri\_event,time)}
-\NormalTok{test\_data}
-\CommentTok{\#\textgreater{}    name age type\_surg pri\_event time}
-\CommentTok{\#\textgreater{} 1     a  63         0         0   24}
-\CommentTok{\#\textgreater{} 2     b  65         1         0   24}
-\CommentTok{\#\textgreater{} 3     c  67         0         0   24}
-\CommentTok{\#\textgreater{} 4     d  69         0         0   24}
-\CommentTok{\#\textgreater{} 5     e  71         1         0   24}
-\CommentTok{\#\textgreater{} 6     f  73         1         1    3}
-\CommentTok{\#\textgreater{} 7     g  75         1         1    2}
-\CommentTok{\#\textgreater{} 8     h  77         0         0   24}
-\CommentTok{\#\textgreater{} 9     i  79         0         0   24}
-\CommentTok{\#\textgreater{} 10    j  81         0         1    7}
-
-\CommentTok{\# subsetting can be done. important to remember to specify the column as blank }
-\CommentTok{\# after a coma}
-\NormalTok{ageo70}\OtherTok{\textless{}{-}}\NormalTok{test\_data[age}\SpecialCharTok{\textgreater{}}\DecValTok{70}\NormalTok{,]}
-\NormalTok{ageo70}
-\CommentTok{\#\textgreater{}    name age type\_surg pri\_event time}
-\CommentTok{\#\textgreater{} 5     e  71         1         0   24}
-\CommentTok{\#\textgreater{} 6     f  73         1         1    3}
-\CommentTok{\#\textgreater{} 7     g  75         1         1    2}
-\CommentTok{\#\textgreater{} 8     h  77         0         0   24}
-\CommentTok{\#\textgreater{} 9     i  79         0         0   24}
-\CommentTok{\#\textgreater{} 10    j  81         0         1    7}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{data-handling}{%
-\chapter{Data handling}\label{data-handling}}
+similar to vectors, matrix can be subsetted
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# create data\_frame}
-
-\CommentTok{\# first we have to create concatenated strings of variable}
-\NormalTok{name}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(letters[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{])}
-\NormalTok{age}\OtherTok{\textless{}{-}}\FunctionTok{seq}\NormalTok{(}\AttributeTok{from=}\DecValTok{63}\NormalTok{, }\AttributeTok{to=}\DecValTok{82}\NormalTok{, }\AttributeTok{by=}\DecValTok{2}\NormalTok{)}
-\NormalTok{type\_surg}\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{)}
-
-\CommentTok{\# R recognizes this as a number series, we have to covert this to factor}
-\NormalTok{type\_surg}\OtherTok{\textless{}{-}}\FunctionTok{as.factor}\NormalTok{(type\_surg)}
-
-\NormalTok{pri\_event}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{)}
-\NormalTok{pri\_event}\OtherTok{\textless{}{-}}\FunctionTok{as.factor}\NormalTok{(pri\_event)}
-\NormalTok{time}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{24}\NormalTok{,}\DecValTok{24}\NormalTok{,}\DecValTok{24}\NormalTok{,}\DecValTok{24}\NormalTok{,}\DecValTok{24}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{24}\NormalTok{,}\DecValTok{24}\NormalTok{,}\DecValTok{7}\NormalTok{)}
-\NormalTok{test\_data}\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(name,age,type\_surg,pri\_event,time)}
-\NormalTok{test\_data}
-\CommentTok{\#\textgreater{}    name age type\_surg pri\_event time}
-\CommentTok{\#\textgreater{} 1     a  63         0         0   24}
-\CommentTok{\#\textgreater{} 2     b  65         1         0   24}
-\CommentTok{\#\textgreater{} 3     c  67         0         0   24}
-\CommentTok{\#\textgreater{} 4     d  69         0         0   24}
-\CommentTok{\#\textgreater{} 5     e  71         1         0   24}
-\CommentTok{\#\textgreater{} 6     f  73         1         1    3}
-\CommentTok{\#\textgreater{} 7     g  75         1         1    2}
-\CommentTok{\#\textgreater{} 8     h  77         0         0   24}
-\CommentTok{\#\textgreater{} 9     i  79         0         0   24}
-\CommentTok{\#\textgreater{} 10    j  81         0         1    7}
-
-\CommentTok{\#logic operations}
-
-\CommentTok{\# add new row to test\_data2, cbind and rbind}
-
-\NormalTok{new\_data}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\StringTok{"k"}\NormalTok{, }\DecValTok{63}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{24}\NormalTok{)}
-\NormalTok{new\_data}
-\CommentTok{\#\textgreater{} [1] "k"  "63" "0"  "0"  "24"}
-
-\NormalTok{test\_data2}\OtherTok{\textless{}{-}}\FunctionTok{rbind}\NormalTok{(test\_data,new\_data)}
-\NormalTok{test\_data2}
-\CommentTok{\#\textgreater{}    name age type\_surg pri\_event time}
-\CommentTok{\#\textgreater{} 1     a  63         0         0   24}
-\CommentTok{\#\textgreater{} 2     b  65         1         0   24}
-\CommentTok{\#\textgreater{} 3     c  67         0         0   24}
-\CommentTok{\#\textgreater{} 4     d  69         0         0   24}
-\CommentTok{\#\textgreater{} 5     e  71         1         0   24}
-\CommentTok{\#\textgreater{} 6     f  73         1         1    3}
-\CommentTok{\#\textgreater{} 7     g  75         1         1    2}
-\CommentTok{\#\textgreater{} 8     h  77         0         0   24}
-\CommentTok{\#\textgreater{} 9     i  79         0         0   24}
-\CommentTok{\#\textgreater{} 10    j  81         0         1    7}
-\CommentTok{\#\textgreater{} 11    k  63         0         0   24}
-
-\NormalTok{new\_data2}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{10}\SpecialCharTok{:}\DecValTok{1}\NormalTok{)}
-\NormalTok{test\_data3}\OtherTok{\textless{}{-}}\FunctionTok{cbind}\NormalTok{(test\_data,new\_data2)}
-\NormalTok{test\_data3}
-\CommentTok{\#\textgreater{}    name age type\_surg pri\_event time new\_data2}
-\CommentTok{\#\textgreater{} 1     a  63         0         0   24        10}
-\CommentTok{\#\textgreater{} 2     b  65         1         0   24         9}
-\CommentTok{\#\textgreater{} 3     c  67         0         0   24         8}
-\CommentTok{\#\textgreater{} 4     d  69         0         0   24         7}
-\CommentTok{\#\textgreater{} 5     e  71         1         0   24         6}
-\CommentTok{\#\textgreater{} 6     f  73         1         1    3         5}
-\CommentTok{\#\textgreater{} 7     g  75         1         1    2         4}
-\CommentTok{\#\textgreater{} 8     h  77         0         0   24         3}
-\CommentTok{\#\textgreater{} 9     i  79         0         0   24         2}
-\CommentTok{\#\textgreater{} 10    j  81         0         1    7         1}
-
-\CommentTok{\# other logic operations, on the test\_data in the r basics script}
-
-\CommentTok{\# is age \textgreater{}70?}
-
-\NormalTok{typage}\OtherTok{\textless{}{-}}\NormalTok{age}\SpecialCharTok{\textgreater{}}\DecValTok{70}
-\NormalTok{typage[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{5}\NormalTok{]}
-\CommentTok{\#\textgreater{} [1] FALSE FALSE FALSE FALSE  TRUE}
-
-\CommentTok{\# get this answer as 0 and 1}
-
-\NormalTok{typage2}\OtherTok{\textless{}{-}}\FunctionTok{as.numeric}\NormalTok{(age}\SpecialCharTok{\textgreater{}}\DecValTok{70}\NormalTok{)}
-\NormalTok{typage2  }
-\CommentTok{\#\textgreater{}  [1] 0 0 0 0 1 1 1 1 1 1}
-
-\CommentTok{\# multiple logic operations}
-
-\NormalTok{oldtha}\OtherTok{\textless{}{-}}\NormalTok{age}\SpecialCharTok{\textgreater{}}\DecValTok{70} \SpecialCharTok{\&}\NormalTok{ type\_surg}\SpecialCharTok{==}\StringTok{"1"}
-\NormalTok{oldtha}
-\CommentTok{\#\textgreater{}  [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE}
-\CommentTok{\#\textgreater{} [10] FALSE}
-
-\CommentTok{\# add this to our data as a new column}
-
-\NormalTok{test\_data}
-\CommentTok{\#\textgreater{}    name age type\_surg pri\_event time}
-\CommentTok{\#\textgreater{} 1     a  63         0         0   24}
-\CommentTok{\#\textgreater{} 2     b  65         1         0   24}
-\CommentTok{\#\textgreater{} 3     c  67         0         0   24}
-\CommentTok{\#\textgreater{} 4     d  69         0         0   24}
-\CommentTok{\#\textgreater{} 5     e  71         1         0   24}
-\CommentTok{\#\textgreater{} 6     f  73         1         1    3}
-\CommentTok{\#\textgreater{} 7     g  75         1         1    2}
-\CommentTok{\#\textgreater{} 8     h  77         0         0   24}
-\CommentTok{\#\textgreater{} 9     i  79         0         0   24}
-\CommentTok{\#\textgreater{} 10    j  81         0         1    7}
-\NormalTok{test\_data5}\OtherTok{\textless{}{-}}\FunctionTok{cbind}\NormalTok{(test\_data,oldtha)}
-\NormalTok{test\_data5}
-\CommentTok{\#\textgreater{}    name age type\_surg pri\_event time oldtha}
-\CommentTok{\#\textgreater{} 1     a  63         0         0   24  FALSE}
-\CommentTok{\#\textgreater{} 2     b  65         1         0   24  FALSE}
-\CommentTok{\#\textgreater{} 3     c  67         0         0   24  FALSE}
-\CommentTok{\#\textgreater{} 4     d  69         0         0   24  FALSE}
-\CommentTok{\#\textgreater{} 5     e  71         1         0   24   TRUE}
-\CommentTok{\#\textgreater{} 6     f  73         1         1    3   TRUE}
-\CommentTok{\#\textgreater{} 7     g  75         1         1    2   TRUE}
-\CommentTok{\#\textgreater{} 8     h  77         0         0   24  FALSE}
-\CommentTok{\#\textgreater{} 9     i  79         0         0   24  FALSE}
-\CommentTok{\#\textgreater{} 10    j  81         0         1    7  FALSE}
-
-\CommentTok{\# Clearing workspace inr}
-
-\FunctionTok{rm}\NormalTok{(}\AttributeTok{list=}\FunctionTok{ls}\NormalTok{())}
-
-\CommentTok{\# remember how to import dataset.}
-\CommentTok{\# new\_datax\textless{}{-}read.csv(file.choose(), header = T)}
-
-\CommentTok{\# create table}
-\CommentTok{\# table()}
+\NormalTok{m1[}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{), }\DecValTok{2}\NormalTok{]}
+\CommentTok{\#\textgreater{} [1]  6 10}
 \end{Highlighting}
 \end{Shaded}
 
+data\_frame is a type of matrix
+we can create data\_frame in R or we can import
+
+Creating data\_frame
+first we have to create concatenated strings of variable
+name\textless-c(letters{[}1:10{]})
+age\textless-seq(from=63, to=82, by=2)
+type\_surg\textless- c(0,1,0,0,1,1,1,0,0,0)
+
+\hypertarget{r-recognizes-this-as-a-number-series-we-have-to-covert-this-to-factor}{%
+\section{R recognizes this as a number series, we have to covert this to factor}\label{r-recognizes-this-as-a-number-series-we-have-to-covert-this-to-factor}}
+
+type\_surg\textless-as.factor(type\_surg)
+
+pri\_event\textless-c(0,0,0,0,0,1,1,0,0,1)
+pri\_event\textless-as.factor(pri\_event)
+time\textless-c(24,24,24,24,24,3,2,24,24,7)
+test\_data\textless- data.frame(name,age,type\_surg,pri\_event,time)
+test\_data
+
+\hypertarget{subsetting-can-be-done.-important-to-remember-to-specify-the-column-as-blank}{%
+\section{subsetting can be done. important to remember to specify the column as blank}\label{subsetting-can-be-done.-important-to-remember-to-specify-the-column-as-blank}}
+
+\hypertarget{after-a-coma}{%
+\section{after a coma}\label{after-a-coma}}
+
+ageo70\textless-test\_data{[}age\textgreater70,{]}
+ageo70
+
+\begin{verbatim}
+
+<!--chapter:end:1.1-rbasics.Rmd-->
+
+# Data handling
+
+
+```r
+# create data_frame
+
+# first we have to create concatenated strings of variable
+name<-c(letters[1:10])
+age<-seq(from=63, to=82, by=2)
+type_surg<- c(0,1,0,0,1,1,1,0,0,0)
+
+# R recognizes this as a number series, we have to covert this to factor
+type_surg<-as.factor(type_surg)
+
+pri_event<-c(0,0,0,0,0,1,1,0,0,1)
+pri_event<-as.factor(pri_event)
+time<-c(24,24,24,24,24,3,2,24,24,7)
+test_data<- data.frame(name,age,type_surg,pri_event,time)
+test_data
+#>    name age type_surg pri_event time
+#> 1     a  63         0         0   24
+#> 2     b  65         1         0   24
+#> 3     c  67         0         0   24
+#> 4     d  69         0         0   24
+#> 5     e  71         1         0   24
+#> 6     f  73         1         1    3
+#> 7     g  75         1         1    2
+#> 8     h  77         0         0   24
+#> 9     i  79         0         0   24
+#> 10    j  81         0         1    7
+
+#logic operations
+
+# add new row to test_data2, cbind and rbind
+
+new_data<-c("k", 63,0,0,24)
+new_data
+#> [1] "k"  "63" "0"  "0"  "24"
+
+test_data2<-rbind(test_data,new_data)
+test_data2
+#>    name age type_surg pri_event time
+#> 1     a  63         0         0   24
+#> 2     b  65         1         0   24
+#> 3     c  67         0         0   24
+#> 4     d  69         0         0   24
+#> 5     e  71         1         0   24
+#> 6     f  73         1         1    3
+#> 7     g  75         1         1    2
+#> 8     h  77         0         0   24
+#> 9     i  79         0         0   24
+#> 10    j  81         0         1    7
+#> 11    k  63         0         0   24
+
+new_data2<-c(10:1)
+test_data3<-cbind(test_data,new_data2)
+test_data3
+#>    name age type_surg pri_event time new_data2
+#> 1     a  63         0         0   24        10
+#> 2     b  65         1         0   24         9
+#> 3     c  67         0         0   24         8
+#> 4     d  69         0         0   24         7
+#> 5     e  71         1         0   24         6
+#> 6     f  73         1         1    3         5
+#> 7     g  75         1         1    2         4
+#> 8     h  77         0         0   24         3
+#> 9     i  79         0         0   24         2
+#> 10    j  81         0         1    7         1
+
+# other logic operations, on the test_data in the r basics script
+
+# is age >70?
+
+typage<-age>70
+typage[1:5]
+#> [1] FALSE FALSE FALSE FALSE  TRUE
+
+# get this answer as 0 and 1
+
+typage2<-as.numeric(age>70)
+typage2  
+#>  [1] 0 0 0 0 1 1 1 1 1 1
+
+# multiple logic operations
+
+oldtha<-age>70 & type_surg=="1"
+oldtha
+#>  [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE
+#> [10] FALSE
+
+# add this to our data as a new column
+
+test_data
+#>    name age type_surg pri_event time
+#> 1     a  63         0         0   24
+#> 2     b  65         1         0   24
+#> 3     c  67         0         0   24
+#> 4     d  69         0         0   24
+#> 5     e  71         1         0   24
+#> 6     f  73         1         1    3
+#> 7     g  75         1         1    2
+#> 8     h  77         0         0   24
+#> 9     i  79         0         0   24
+#> 10    j  81         0         1    7
+test_data5<-cbind(test_data,oldtha)
+test_data5
+#>    name age type_surg pri_event time oldtha
+#> 1     a  63         0         0   24  FALSE
+#> 2     b  65         1         0   24  FALSE
+#> 3     c  67         0         0   24  FALSE
+#> 4     d  69         0         0   24  FALSE
+#> 5     e  71         1         0   24   TRUE
+#> 6     f  73         1         1    3   TRUE
+#> 7     g  75         1         1    2   TRUE
+#> 8     h  77         0         0   24  FALSE
+#> 9     i  79         0         0   24  FALSE
+#> 10    j  81         0         1    7  FALSE
+
+# Clearing workspace inr
+
+rm(list=ls())
+
+# remember how to import dataset.
+# new_datax<-read.csv(file.choose(), header = T)
+
+# create table
+# table()
+\end{verbatim}
+
 \hypertarget{data-cleaning}{%
-\chapter{Data Cleaning}\label{data-cleaning}}
+\section{Data Cleaning}\label{data-cleaning}}
 
 Main actions are select(), filter(), group\_by(), mutate(), summarise(),full\_join(), pivot\_wide() and pivot\_long(), spread(), map(), strsplit()
 
@@ -869,7 +910,5 @@ Main actions are select(), filter(), group\_by(), mutate(), summarise(),full\_jo
 \end{Highlighting}
 \end{Shaded}
 
-
-  \bibliography{book.bib,packages.bib}
 
 \end{document}

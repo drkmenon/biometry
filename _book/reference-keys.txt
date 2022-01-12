@@ -1,4 +1,6 @@
 about
 r-basics
-data-handling
+r-recognizes-this-as-a-number-series-we-have-to-covert-this-to-factor
+subsetting-can-be-done.-important-to-remember-to-specify-the-column-as-blank
+after-a-coma
 data-cleaning
