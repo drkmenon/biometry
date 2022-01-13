@@ -1,7 +1,7 @@
 --- 
 title: "Biometry for Clinical Research"
 author: "Kishore Puthezhath"
-date: "2022-01-12"
+date: "2022-01-13"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]

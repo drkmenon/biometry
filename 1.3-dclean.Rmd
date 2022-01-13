@@ -45,7 +45,7 @@ booking %>%
 ggplot2: for plotting
 ggplot(aes()+geom_histogram()/geom_point()....
 
-```{r }
+```{r, out.width="100%" }
 booking %>% 
   ggplot(
     aes(review_score)
@@ -128,7 +128,7 @@ wide
 
 Boxplot with ggplot2
 
-```{r }
+```{r , out.width="100%"}
 booking %>% 
   ggplot(
     aes(
